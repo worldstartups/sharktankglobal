@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117;
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: #000;
+    color: white;
+    padding: 15px 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-buttons a, .dropdown select {
+    background: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-buttons a:hover {
+    background: #444;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown select {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.hero {
+    padding: 80px 20px;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #161b22;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 18px;
+}
+
+.featured-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.featured-show {
+    width: 300px;
+    background: #161b22;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.featured-show:hover {
+    transform: scale(1.05);
+}
+
+.featured-show h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
