@@ -1,0 +1,16 @@
+{
+    "season1": [
+      { "company": "Company A", "category": "Tech", "subCategory": "AI", "investor": "Investor X", "valuation": "₹200 Cr" },
+      { "company": "Company B", "category": "Health", "subCategory": "MedTech", "investor": "Investor Y", "valuation": "₹150 Cr" }
+    ],
+    "season2": [
+      { "company": "Company C", "category": "Finance", "subCategory": "FinTech", "investor": "Investor Z", "valuation": "₹300 Cr" }
+    ],
+    "season3": [
+      { "company": "Company D", "category": "Food", "subCategory": "Organic", "investor": "Investor A", "valuation": "₹250 Cr" }
+    ],
+    "season4": [
+      { "company": "Company E", "category": "E-commerce", "subCategory": "Fashion", "investor": "Investor B", "valuation": "₹500 Cr" }
+    ]
+  }
+  
