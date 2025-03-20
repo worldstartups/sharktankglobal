@@ -1,5 +1,45 @@
-[
-    { "name": "Company 1", "description": "Innovative Startup from India" },
-    { "name": "Company 2", "description": "Tech-driven solution from India" }
+{
+  "season1": [
+    {
+      "name": "Company A",
+      "category": "Tech",
+      "subCategory": "AI",
+      "investor": "Investor X",
+      "valuation": "$10M"
+    },
+    {
+      "name": "Company B",
+      "category": "Food",
+      "subCategory": "Snacks",
+      "investor": "Investor Y",
+      "valuation": "$5M"
+    }
+  ],
+  "season2": [
+    {
+      "name": "Company C",
+      "category": "Health",
+      "subCategory": "Fitness",
+      "investor": "Investor Z",
+      "valuation": "$8M"
+    }
+  ],
+  "season3": [
+    {
+      "name": "Company D",
+      "category": "E-commerce",
+      "subCategory": "Fashion",
+      "investor": "Investor A",
+      "valuation": "$15M"
+    }
+  ],
+  "season4": [
+    {
+      "name": "Company E",
+      "category": "Education",
+      "subCategory": "Online Learning",
+      "investor": "Investor B",
+      "valuation": "$20M"
+    }
   ]
-  
+}

@@ -1,0 +1,70 @@
+{
+    "season1": [
+    {
+      "name": "Blue Pine Foods",
+      "category": "Food & Beverage",
+      "subCategory": "Ready-to-Eat Meals",
+      "investor": "Vineeta Singh",
+      "valuation": "10"
+    },
+    {
+      "name": "Get a Whey",
+      "category": "Food & Beverage",
+      "subCategory": "Protein Snacks",
+      "investor": "Aman Gupta",
+      "valuation": "15"
+    },
+    {
+      "name": "Booz scooters",
+      "category": "Automotive",
+      "subCategory": "Electric Scooters",
+      "investor": "Ashneer Grover",
+      "valuation": "20"
+    },
+    {
+      "name": "Cocofit",
+      "category": "Health & Wellness",
+      "subCategory": "Healthy Beverages",
+      "investor": "Namita Thapar",
+      "valuation": "12"
+    },
+    {
+      "name": "Yoga Bar",
+      "category": "Food & Beverage",
+      "subCategory": "Healthy Snacks",
+      "investor": "Anupam Mittal",
+      "valuation": "18"
+    },
+    {
+      "name": "The Yarn Bazaar",
+      "category": "E-commerce",
+      "subCategory": "Textile Marketplace",
+      "investor": "Peyush Bansal",
+      "valuation": "25"
+    },
+    {
+      "name": "Beyond Water",
+      "category": "Food & Beverage",
+      "subCategory": "Flavored Water",
+      "investor": "Ghazal Alagh",
+      "valuation": "14"
+    },
+    {
+      "name": "Humpy A2",
+      "category": "Food & Beverage",
+      "subCategory": "A2 Milk",
+      "investor": "Namita Thapar",
+      "valuation": "8"
+    }
+    ],
+    "season2": [
+      {
+        "name": "Company C",
+        "category": "Food",
+        "subCategory": "Snacks",
+        "investor": "Investor Z",
+        "valuation": "1"
+      }
+    ]
+  }
+  
