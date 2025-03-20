@@ -1,15 +1,14 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import IndiaPage from "./pages/IndiaPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/india" element={<IndiaPage />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/india" element={<IndiaPage />} />
+    </Routes>
   );
 }
 
