@@ -109,6 +109,9 @@
 /* Image */
 .investor-image-container {
     position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 /* Adjust Image Size for Mobile */
@@ -119,6 +122,13 @@
     object-fit: cover;
     border: 3px solid white;
     transition: opacity 0.3s ease-in-out;
+}
+
+/* Hide Hover Image on Mobile */
+@media (max-width: 480px) {
+    .investor-image-hover {
+        display: none; /* Hide hover image on mobile */
+    }
 }
 
 /* Disable Image Hover on Mobile */
