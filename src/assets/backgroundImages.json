@@ -1,0 +1,15 @@
+
+[
+  {
+    "id": 1,
+    "image": "./shark1.jpg"
+  },
+  {
+    "id": 2,
+    "image": "./shark2.jpg"
+  },
+  {
+    "id": 3,
+    "image": "./shark3.jpg"
+  }
+]

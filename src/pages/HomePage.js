@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react"; // Import React and useState in one line
 import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
+import backgroundImages from '../assets/backgroundImages.json'; // Import the JSON file
+import sharkImage from '../assets/shark9.jpg'; // Import the image directly
 
 const HomePage = () => {
   const navigate = useNavigate();
 
+  // Use state to select a background image
+  const [background, setBackground] = useState(sharkImage); // Set initial background to the imported image
+
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: `url(${background})`, // Dynamically set background image
+        backgroundSize: 'cover', // Ensure it covers the screen
+        backgroundPosition: 'center center', // Center the image
+        backgroundRepeat: 'no-repeat', // Don't repeat the image
+        height: '100vh', // Full viewport height
+      }}
+    >
       <header>
         <div className="nav-buttons">
-          {/* Use Link component for internal navigation */}
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <div className="dropdown">

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./IndiaPage.css";
 import companies from "../data/companies.json";
 import Header from "../components/Header"; // ✅ Import the Header component
+import backgroundImages from '../assets/backgroundImages.json'; // If you want to use JSON-based images
+import sharkImage from '../assets/shark8.jpg'; // Import the image directly if needed
 
 const IndiaPage = () => {
   const [activeTab, setActiveTab] = useState("season1");
@@ -75,7 +77,16 @@ const IndiaPage = () => {
   });
 
   return (
-    <div className="india-container">
+    <div
+      className="india-container"
+      style={{
+        backgroundImage: `url(${sharkImage})`, // Use the local image or from JSON
+        backgroundSize: "cover", // Ensures it covers the whole screen
+        backgroundPosition: "center center", // Centers the image
+        backgroundRepeat: "no-repeat", // Prevents the image from repeating
+        height: "100vh", // Full viewport height
+      }}
+    >
       {/* ✅ Use Header Component */}
       <Header />
 
