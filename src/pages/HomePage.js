@@ -1,25 +1,32 @@
-import React, { useState } from "react"; // Import React and useState in one line
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import backgroundImages from '../assets/backgroundImages.json'; // Import the JSON file
-import sharkImage from '../assets/shark9.jpg'; // Import the image directly
+import sharkImage from '../assets/shark9.jpg'; 
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const [background, setBackground] = useState(sharkImage); 
 
-  // Use state to select a background image
-  const [background, setBackground] = useState(sharkImage); // Set initial background to the imported image
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = sharkImage; // Preload the background image
+
+    // Once the image is loaded, set the background image
+    preloadImage.onload = () => {
+      setBackground(sharkImage);
+    };
+  }, []);
 
   return (
     <div
       style={{
-        backgroundImage: `url(${background})`, // Dynamically set background image
-    backgroundSize: 'cover', // Ensure it covers the entire screen
-    backgroundPosition: 'center center', // Center the image
-    backgroundRepeat: 'no-repeat', // Prevent repeating the image
-    height: '150vh', // Full viewport height
-    width: '100%', // Ensure it takes the full width
-    objectFit: 'cover', // Ensures the image scales to cover the area without being distorted
+        backgroundImage: `url(${background})`, 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center center', 
+        backgroundRepeat: 'no-repeat', 
+        height: '150vh', 
+        width: '100%', 
+        objectFit: 'cover', 
       }}
     >
       <header>
