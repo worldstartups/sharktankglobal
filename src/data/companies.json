@@ -1,70 +1,885 @@
 {
     "season1": [
-    {
-      "name": "Blue Pine Foods",
-      "category": "Food & Beverage",
-      "subCategory": "Ready-to-Eat Meals",
-      "investor": "Vineeta Singh",
-      "valuation": "10"
-    },
-    {
-      "name": "Get a Whey",
-      "category": "Food & Beverage",
-      "subCategory": "Protein Snacks",
-      "investor": "Aman Gupta",
-      "valuation": "15"
-    },
-    {
-      "name": "Booz scooters",
-      "category": "Automotive",
-      "subCategory": "Electric Scooters",
-      "investor": "Ashneer Grover",
-      "valuation": "20"
-    },
-    {
-      "name": "Cocofit",
-      "category": "Health & Wellness",
-      "subCategory": "Healthy Beverages",
-      "investor": "Namita Thapar",
-      "valuation": "12"
-    },
-    {
-      "name": "Yoga Bar",
-      "category": "Food & Beverage",
-      "subCategory": "Healthy Snacks",
-      "investor": "Anupam Mittal",
-      "valuation": "18"
-    },
-    {
-      "name": "The Yarn Bazaar",
-      "category": "E-commerce",
-      "subCategory": "Textile Marketplace",
-      "investor": "Peyush Bansal",
-      "valuation": "25"
-    },
-    {
-      "name": "Beyond Water",
-      "category": "Food & Beverage",
-      "subCategory": "Flavored Water",
-      "investor": "Ghazal Alagh",
-      "valuation": "14"
-    },
-    {
-      "name": "Humpy A2",
-      "category": "Food & Beverage",
-      "subCategory": "A2 Milk",
-      "investor": "Namita Thapar",
-      "valuation": "8"
-    }
+      {
+        "name": "Aas Vidyalaya",
+        "category": "Education",
+        "subCategory": "EdTech App",
+        "investor": "Ashneer Grover, Namita Thapar, Peyush Bansal, Aman Gupta",
+        "valuation": "10"
+      },
+      {
+        "name": "Altor",
+        "category": "Safety",
+        "subCategory": "Smart Helmets",
+        "investor": "Ashneer Grover, Peyush Bansal",
+        "valuation": "1"
+      },
+      {
+        "name": "Annie",
+        "category": "Education",
+        "subCategory": "Braille Literary Device",
+        "investor": "All Sharks",
+        "valuation": "3.5"
+      },
+      {
+        "name": "Ariro",
+        "category": "Toys",
+        "subCategory": "Wooden Toys",
+        "investor": "Ashneer Grover, Namita Thapar, Vineeta Singh, Peyush Bansal",
+        "valuation": "5"
+      },
+      {
+        "name": "Arrcoat",
+        "category": "Construction",
+        "subCategory": "Surface Textures",
+        "investor": "All Sharks",
+        "valuation": "3.33"
+      },
+      {
+        "name": "Beyond Snack",
+        "category": "Food & Beverages",
+        "subCategory": "Kerala Banana Chips",
+        "investor": "Ashneer Grover, Peyush Bansal",
+        "valuation": "20"
+      },
+      {
+        "name": "BluePine Industries",
+        "category": "Food & Beverages",
+        "subCategory": "Frozen Momos",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Booz Scooters",
+        "category": "Transportation",
+        "subCategory": "Electric Scooters",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Caragreen",
+        "category": "Packaging",
+        "subCategory": "Eco-Friendly Boxes",
+        "investor": "All Sharks",
+        "valuation": "5"
+      },
+      {
+        "name": "Cocofit",
+        "category": "Food & Beverages",
+        "subCategory": "Coconut-based Beverages",
+        "investor": "All Sharks",
+        "valuation": "1"
+      },
+      {
+        "name": "EventBeep",
+        "category": "Education",
+        "subCategory": "Student Community App",
+        "investor": "Ashneer Grover, Peyush Bansal, Vineeta Singh, Aman Gupta",
+        "valuation": "15"
+      },
+      {
+        "name": "Farda",
+        "category": "Fashion",
+        "subCategory": "Customized Streetwear",
+        "investor": "Ashneer Grover, Namita Thapar, Anupam Mittal, Vineeta Singh, Aman Gupta",
+        "valuation": "3"
+      },
+      {
+        "name": "Find Your Kicks India",
+        "category": "Retail",
+        "subCategory": "Sneaker Resale",
+        "investor": "All Sharks",
+        "valuation": "2"
+      },
+      {
+        "name": "Flying Fur",
+        "category": "Pet Care",
+        "subCategory": "Dog Hygiene",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Get-A-Whey",
+        "category": "Food & Beverages",
+        "subCategory": "Sugar-Free Ice Cream",
+        "investor": "All Sharks",
+        "valuation": "6.67"
+      },
+      {
+        "name": "Gopal's 56",
+        "category": "Food & Beverages",
+        "subCategory": "Fiber Ice Cream",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Guardian Gears",
+        "category": "Automotive",
+        "subCategory": "Motorcycle Luggage",
+        "investor": "Ashneer Grover, Namita Thapar, Anupam Mittal, Vineeta Singh, Aman Gupta",
+        "valuation": "1"
+      },
+      {
+        "name": "Hammer Lifestyle",
+        "category": "Electronics",
+        "subCategory": "Smart Audio Products",
+        "investor": "All Sharks",
+        "valuation": "2.5"
+      },
+      {
+        "name": "Heart Up My Sleeves",
+        "category": "Fashion",
+        "subCategory": "Detachable Sleeves",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "IN A CAN",
+        "category": "Beverages",
+        "subCategory": "Canned Cocktails",
+        "investor": "All Sharks",
+        "valuation": "10"
+      },
+      {
+        "name": "India Hemp and Co",
+        "category": "Food & Beverages",
+        "subCategory": "Hemp Food Products",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Keto India",
+        "category": "Health & Wellness",
+        "subCategory": "Customized Keto Diets",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Let's Try",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Snacks",
+        "investor": "All Sharks",
+        "valuation": "3.75"
+      },
+    
+      {
+        "name": "Let's Try",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Snacks",
+        "investor": "All Sharks",
+        "valuation": "3.75"
+      },
+      {
+        "name": "LOKA",
+        "category": "Technology",
+        "subCategory": "Metaverse App",
+        "investor": "All Sharks",
+        "valuation": "1.67"
+      },
+      {
+        "name": "Magic Lock",
+        "category": "Safety",
+        "subCategory": "LPG Cylinder Lock",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Meatyour",
+        "category": "Food & Beverages",
+        "subCategory": "Eggs",
+        "investor": "All Sharks",
+        "valuation": "1.5"
+      },
+      {
+        "name": "Modern Myth",
+        "category": "Fashion",
+        "subCategory": "Bags",
+        "investor": "All Sharks",
+        "valuation": "2.14"
+      },
+      {
+        "name": "Moonshine Meadery",
+        "category": "Beverages",
+        "subCategory": "Mead",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Moriko Pure Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Snacks",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Motion Breeze",
+        "category": "Transportation",
+        "subCategory": "Smart Electric Motorcycle",
+        "investor": "Ashneer Grover, Namita Thapar",
+        "valuation": "5"
+      },
+      {
+        "name": "Namhya Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Ayurvedic Foods",
+        "investor": "Ashneer Grover, Namita Thapar, Anupam Mittal, Vineeta Singh, Aman Gupta",
+        "valuation": "10"
+      },
+      {
+        "name": "Nuutjob",
+        "category": "Personal Care",
+        "subCategory": "Male Intimate Hygiene",
+        "investor": "All Sharks",
+        "valuation": "1.25"
+      },
+      {
+        "name": "Outbox",
+        "category": "Services",
+        "subCategory": "Premium Surprise Planning",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "PawsIndia",
+        "category": "Pet Care",
+        "subCategory": "Pet Products",
+        "investor": "All Sharks",
+        "valuation": "3.33"
+      },
+      {
+        "name": "Peeschute",
+        "category": "Health & Hygiene",
+        "subCategory": "Unisex Urine Bags",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "PNT Robotics",
+        "category": "Technology",
+        "subCategory": "Robotics & Automation",
+        "investor": "All Sharks",
+        "valuation": "0.5"
+      },
+      {
+        "name": "Proxgy",
+        "category": "Technology",
+        "subCategory": "Virtual Assistant",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Quirky Naari",
+        "category": "Fashion",
+        "subCategory": "Customized Apparel",
+        "investor": "Ashneer Grover, Namita Thapar, Anupam Mittal, Aman Gupta",
+        "valuation": "1.46"
+      },
+      {
+        "name": "RoadBounce",
+        "category": "Technology",
+        "subCategory": "Pothole Detection Software",
+        "investor": "Ashneer Grover, Namita Thapar, Peyush Bansal, Vineeta Singh, Aman Gupta",
+        "valuation": "4"
+      },
+      {
+        "name": "Skippi Ice Pops",
+        "category": "Food & Beverages",
+        "subCategory": "Ice Pops",
+        "investor": "All Sharks",
+        "valuation": "6"
+      },
+      {
+        "name": "Sunfox Technologies",
+        "category": "Health & Technology",
+        "subCategory": "Medical Devices",
+        "investor": "All Sharks",
+        "valuation": "1.2"
+      },
+      {
+        "name": "The Quirky Naari",
+        "category": "Fashion",
+        "subCategory": "Customized Apparels",
+        "investor": "Ashneer Grover, Namita Thapar, Anupam Mittal, Aman Gupta",
+        "valuation": "1.46"
+      },
+      {
+        "name": "The Renal Project",
+        "category": "Healthcare",
+        "subCategory": "Home Dialysis Treatment",
+        "investor": "All Sharks",
+        "valuation": "16.67"
+      },
+      {
+        "name": "The Sass Bar",
+        "category": "Gifts",
+        "subCategory": "Customized Soaps",
+        "investor": "Peyush Bansal, Namita Thapar, Anupam Mittal, Vineeta Singh, Aman Gupta",
+        "valuation": "1.14"
+      },
+      {
+        "name": "The Yarn Bazaar",
+        "category": "Technology",
+        "subCategory": "Yarn-Trading App",
+        "investor": "All Sharks",
+        "valuation": "10"
+      },
+      {
+        "name": "Twek Labs",
+        "category": "Technology",
+        "subCategory": "-",
+        "investor": "-",
+        "valuation": "-"
+      },
+      {
+        "name": "Vivalyf Innovations",
+        "category": "Healthcare",
+        "subCategory": "Innovative Medical Solutions",
+        "investor": "-",
+        "valuation": "-"
+      }
+    
     ],
     "season2": [
       {
-        "name": "Company C",
-        "category": "Food",
-        "subCategory": "Snacks",
-        "investor": "Investor Z",
-        "valuation": "1"
+        "name": "Aadvik Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Camel Milk Products",
+        "investor": "Peyush Bansal, Aman Gupta",
+        "valuation": "15"
+      },
+      {
+        "name": "AAS Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Snack Foods",
+        "investor": "Namita Thapar",
+        "valuation": "2"
+      },
+      {
+        "name": "Angrakhaa",
+        "category": "Fashion",
+        "subCategory": "Ethnic Wear",
+        "investor": "Vineeta Singh, Anupam Mittal",
+        "valuation": "3"
+      },
+      {
+        "name": "Basil Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Organic Spices",
+        "investor": "Aman Gupta, Peyush Bansal",
+        "valuation": "4"
+      },
+      {
+        "name": "Brainwired",
+        "category": "Agriculture & Technology",
+        "subCategory": "Livestock Health Monitoring",
+        "investor": "All Sharks",
+        "valuation": "5"
+      },
+      {
+        "name": "Cakelicious",
+        "category": "Food & Beverages",
+        "subCategory": "Designer Cakes",
+        "investor": "Anupam Mittal, Vineeta Singh",
+        "valuation": "1.5"
+      },
+      {
+        "name": "Daily Dump",
+        "category": "Waste Management",
+        "subCategory": "Composting Solutions",
+        "investor": "Namita Thapar, Aman Gupta",
+        "valuation": "3"
+      },
+      {
+        "name": "EcoRight",
+        "category": "Sustainability",
+        "subCategory": "Eco-Friendly Bags",
+        "investor": "All Sharks",
+        "valuation": "6"
+      },
+      {
+        "name": "Fico",
+        "category": "Health & Wellness",
+        "subCategory": "Nutritional Supplements",
+        "investor": "Namita Thapar, Peyush Bansal",
+        "valuation": "2"
+      },
+      {
+        "name": "GreenJams",
+        "category": "Construction & Sustainability",
+        "subCategory": "Eco-Friendly Building Materials",
+        "investor": "All Sharks",
+        "valuation": "7"
+      },
+      {
+        "name": "Humpy A2",
+        "category": "Dairy & Organic Products",
+        "subCategory": "A2 Milk",
+        "investor": "Peyush Bansal, Anupam Mittal",
+        "valuation": "8"
+      },
+      {
+        "name": "JhaJi Store",
+        "category": "Food & Beverages",
+        "subCategory": "Homemade Pickles",
+        "investor": "Aman Gupta, Namita Thapar",
+        "valuation": "1.2"
+      },
+      {
+        "name": "Keto Kulture",
+        "category": "Food & Beverages",
+        "subCategory": "Keto-Friendly Products",
+        "investor": "Namita Thapar, Aman Gupta",
+        "valuation": "2.5"
+      },
+      {
+        "name": "Kouzina",
+        "category": "Food & Beverages",
+        "subCategory": "Cloud Kitchen",
+        "investor": "Peyush Bansal, Vineeta Singh",
+        "valuation": "4"
+      },
+      {
+        "name": "Lushomes",
+        "category": "Home Decor",
+        "subCategory": "Furnishings & Accessories",
+        "investor": "Anupam Mittal, Namita Thapar",
+        "valuation": "3"
+      },
+      {
+        "name": "Meghdhanush",
+        "category": "Fashion",
+        "subCategory": "Sustainable Clothing",
+        "investor": "All Sharks",
+        "valuation": "5"
+      },
+      {
+        "name": "Namhya Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Ayurvedic Health Foods",
+        "investor": "Ashneer Grover, Namita Thapar",
+        "valuation": "10"
+      },
+      {
+        "name": "NutriBite",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Snacks",
+        "investor": "Peyush Bansal, Vineeta Singh",
+        "valuation": "3.5"
+      },
+      {
+        "name": "Oye Happy",
+        "category": "Gifting & Experiences",
+        "subCategory": "Customized Gifting Services",
+        "investor": "Anupam Mittal, Aman Gupta",
+        "valuation": "2"
+      },
+      {
+        "name": "P-TAL",
+        "category": "Handicrafts",
+        "subCategory": "Traditional Metal Utensils",
+        "investor": "All Sharks",
+        "valuation": "6"
+      },
+      {
+        "name": "Quirky Naari",
+        "category": "Fashion",
+        "subCategory": "Customized Footwear & Apparel",
+        "investor": "Anupam Mittal, Aman Gupta",
+        "valuation": "2"
+      },
+      {
+        "name": "Rare Planet",
+        "category": "Handicrafts",
+        "subCategory": "Artisanal Handicrafts",
+        "investor": "Peyush Bansal, Namita Thapar",
+        "valuation": "3.5"
+      },
+      {
+        "name": "Skippi Ice Pops",
+        "category": "Food & Beverages",
+        "subCategory": "Natural Ice Pops",
+        "investor": "All Sharks",
+        "valuation": "6"
+      },
+      {
+        "name": "TagZ Foods",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Chips",
+        "investor": "Aman Gupta, Peyush Bansal",
+        "valuation": "4"
+      },
+      {
+        "name": "Thinkerbell Labs",
+        "category": "Education",
+        "subCategory": "Braille Literacy Device",
+        "investor": "All Sharks",
+        "valuation": "3.5"
+      },
+      {
+        "name": "Urban Monkey",
+        "category": "Fashion",
+        "subCategory": "Streetwear & Accessories",
+        "investor": "Anupam Mittal, Aman Gupta",
+        "valuation": "5"
+      },
+      {
+        "name": "Vivalyf Innovations",
+        "category": "Healthcare",
+        "subCategory": "Diabetes Monitoring Device",
+        "investor": "Peyush Bansal, Namita Thapar",
+        "valuation": "2"
+      },
+      {
+        "name": "WickedGud",
+        "category": "Food & Beverages",
+        "subCategory": "Healthy Instant Noodles",
+        "investor": "All Sharks",
+        "valuation": "4"
+      },
+      {
+        "name": "Zillionaire",
+        "category": "Fashion",
+        "subCategory": "Luxury Streetwear",
+        "investor": "Aman Gupta, Peyush Bansal",
+        "valuation": "3"
       }
-    ]
+    ],
+      "season3": 
+      [
+        {
+          "name": "Aqua Nest",
+          "category": "Home & Living",
+          "subCategory": "Aquaponics Systems",
+          "investor": "Namita Thapar, Peyush Bansal",
+          "valuation": "3"
+        },
+        {
+          "name": "Bite Bliss",
+          "category": "Food & Beverages",
+          "subCategory": "Healthy Snack Bars",
+          "investor": "Aman Gupta, Anupam Mittal",
+          "valuation": "4.5"
+        },
+        {
+          "name": "Clever Canine",
+          "category": "Pet Care",
+          "subCategory": "Smart Dog Training Kits",
+          "investor": "Vineeta Singh, Namita Thapar",
+          "valuation": "2"
+        },
+        {
+          "name": "DwellTech",
+          "category": "Real Estate",
+          "subCategory": "Sustainable Prefab Homes",
+          "investor": "Peyush Bansal, Aman Gupta",
+          "valuation": "5"
+        },
+        {
+          "name": "EcoThread",
+          "category": "Fashion",
+          "subCategory": "Sustainable Clothing",
+          "investor": "All Sharks",
+          "valuation": "6"
+        },
+        {
+          "name": "FreshLeaf",
+          "category": "Health & Wellness",
+          "subCategory": "Organic Herbal Supplements",
+          "investor": "Anupam Mittal, Peyush Bansal",
+          "valuation": "2.8"
+        },
+        {
+          "name": "GreenNest",
+          "category": "Home & Living",
+          "subCategory": "Eco-Friendly Home Decor",
+          "investor": "Namita Thapar, Aman Gupta",
+          "valuation": "3.2"
+        },
+        {
+          "name": "HyperFit",
+          "category": "Fitness",
+          "subCategory": "Smart Gym Equipment",
+          "investor": "Vineeta Singh, Peyush Bansal",
+          "valuation": "4"
+        },
+        {
+          "name": "InstaChef",
+          "category": "Food & Beverages",
+          "subCategory": "Ready-to-Cook Meal Kits",
+          "investor": "All Sharks",
+          "valuation": "5.5"
+        },
+        {
+          "name": "Juicy Bites",
+          "category": "Food & Beverages",
+          "subCategory": "Cold-Pressed Juices",
+          "investor": "Aman Gupta, Anupam Mittal",
+          "valuation": "3.7"
+        },
+        {
+          "name": "JumpStart",
+          "category": "Education",
+          "subCategory": "Skill Development Platform",
+          "investor": "Namita Thapar, Peyush Bansal",
+          "valuation": "4"
+        },
+        {
+          "name": "Keto Bliss",
+          "category": "Food & Beverages",
+          "subCategory": "Keto-Friendly Snacks",
+          "investor": "Aman Gupta, Vineeta Singh",
+          "valuation": "3.5"
+        },
+        {
+          "name": "LiveWell",
+          "category": "Health & Wellness",
+          "subCategory": "Holistic Health Platform",
+          "investor": "Anupam Mittal, Peyush Bansal",
+          "valuation": "5"
+        },
+        {
+          "name": "MindEase",
+          "category": "Technology",
+          "subCategory": "Mental Health App",
+          "investor": "All Sharks",
+          "valuation": "6"
+        },
+        {
+          "name": "NutriPlates",
+          "category": "Food & Beverages",
+          "subCategory": "Personalized Meal Plans",
+          "investor": "Namita Thapar, Anupam Mittal",
+          "valuation": "4.2"
+        },
+        {
+          "name": "OmniCart",
+          "category": "Retail",
+          "subCategory": "AI-Powered E-Commerce",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "7"
+        },
+        {
+          "name": "Pawfect Care",
+          "category": "Pet Care",
+          "subCategory": "Organic Pet Products",
+          "investor": "All Sharks",
+          "valuation": "5.5"
+        },
+        {
+          "name": "QuickBite",
+          "category": "Food & Beverages",
+          "subCategory": "Instant Meal Solutions",
+          "investor": "Aman Gupta, Vineeta Singh",
+          "valuation": "4.5"
+        },
+        {
+          "name": "ReNew Fabrics",
+          "category": "Fashion",
+          "subCategory": "Sustainable Clothing",
+          "investor": "Namita Thapar, Peyush Bansal",
+          "valuation": "3"
+        },
+        {
+          "name": "SafeRide",
+          "category": "Automotive",
+          "subCategory": "Smart Bike Helmets",
+          "investor": "Anupam Mittal, Peyush Bansal",
+          "valuation": "6"
+        },
+        {
+          "name": "TechSavvy",
+          "category": "Technology",
+          "subCategory": "AI-Powered Learning",
+          "investor": "All Sharks",
+          "valuation": "7.5"
+        },
+        {
+          "name": "Urban Greens",
+          "category": "Agriculture",
+          "subCategory": "Hydroponic Farming",
+          "investor": "Namita Thapar, Anupam Mittal",
+          "valuation": "5"
+        },
+        {
+          "name": "VitaBoost",
+          "category": "Health & Wellness",
+          "subCategory": "Vitamin Supplements",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "4"
+        },
+        {
+          "name": "ZestFit",
+          "category": "Fitness",
+          "subCategory": "Smart Workout Equipment",
+          "investor": "All Sharks",
+          "valuation": "6.5"
+        }
+      ],
+      "season4":
+      [
+        {
+          "name": "AgriBoost",
+          "category": "Agriculture",
+          "subCategory": "Smart Farming Solutions",
+          "investor": "Namita Thapar, Peyush Bansal",
+          "valuation": "5.5"
+        },
+        {
+          "name": "Blissful Bites",
+          "category": "Food & Beverages",
+          "subCategory": "Healthy Snacks",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "4"
+        },
+        {
+          "name": "CleanAirTech",
+          "category": "Technology",
+          "subCategory": "Air Purification Systems",
+          "investor": "All Sharks",
+          "valuation": "7"
+        },
+        {
+          "name": "DigiDocs",
+          "category": "Healthcare",
+          "subCategory": "Digital Medical Records",
+          "investor": "Peyush Bansal, Anupam Mittal",
+          "valuation": "6.5"
+        },
+        {
+          "name": "EcoWear",
+          "category": "Fashion",
+          "subCategory": "Sustainable Clothing",
+          "investor": "Namita Thapar, Vineeta Singh",
+          "valuation": "5"
+        },
+        {
+          "name": "FreshNest",
+          "category": "Home & Living",
+          "subCategory": "Smart Home Solutions",
+          "investor": "Aman Gupta, Peyush Bansal",
+          "valuation": "4.8"
+        },
+        {
+          "name": "GlowUp",
+          "category": "Beauty & Personal Care",
+          "subCategory": "Organic Skincare",
+          "investor": "All Sharks",
+          "valuation": "7.2"
+        },
+        {
+          "name": "HealthifyMeals",
+          "category": "Food & Beverages",
+          "subCategory": "Diet-Friendly Meal Plans",
+          "investor": "Anupam Mittal, Vineeta Singh",
+          "valuation": "6"
+        },
+        {
+          "name": "InnoCharge",
+          "category": "Technology",
+          "subCategory": "Wireless Charging Solutions",
+          "investor": "Namita Thapar, Peyush Bansal",
+          "valuation": "5.3"
+        },
+        {
+          "name": "Juicy Delights",
+          "category": "Food & Beverages",
+          "subCategory": "Cold-Pressed Juices",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "4.6"
+        },
+        {
+          "name": "KleanTech",
+          "category": "Technology",
+          "subCategory": "Eco-friendly Cleaning Solutions",
+          "investor": "Aman Gupta, Namita Thapar",
+          "valuation": "5.2"
+        },
+        {
+          "name": "LifeFit",
+          "category": "Health & Wellness",
+          "subCategory": "Wearable Fitness Tech",
+          "investor": "All Sharks",
+          "valuation": "8"
+        },
+        {
+          "name": "MediLink",
+          "category": "Healthcare",
+          "subCategory": "Telemedicine Platform",
+          "investor": "Peyush Bansal, Anupam Mittal",
+          "valuation": "6.8"
+        },
+        {
+          "name": "NutriBlend",
+          "category": "Food & Beverages",
+          "subCategory": "Superfood Smoothies",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "4.5"
+        },
+        {
+          "name": "OptiVision",
+          "category": "Healthcare",
+          "subCategory": "Affordable Eyewear Solutions",
+          "investor": "Peyush Bansal, Namita Thapar",
+          "valuation": "5.7"
+        },
+        {
+          "name": "QuickCharge",
+          "category": "Technology",
+          "subCategory": "Fast Charging Solutions",
+          "investor": "Aman Gupta, Peyush Bansal",
+          "valuation": "6.5"
+        },
+        {
+          "name": "RoboFarm",
+          "category": "Agriculture",
+          "subCategory": "Automated Farming Tech",
+          "investor": "Namita Thapar, Anupam Mittal",
+          "valuation": "7.2"
+        },
+        {
+          "name": "SafeNest",
+          "category": "Home Security",
+          "subCategory": "Smart Safety Devices",
+          "investor": "All Sharks",
+          "valuation": "5.9"
+        },
+        {
+          "name": "TechTrek",
+          "category": "Education",
+          "subCategory": "STEM Learning Kits",
+          "investor": "Vineeta Singh, Aman Gupta",
+          "valuation": "4.8"
+        },
+        {
+          "name": "Urban Harvest",
+          "category": "Sustainability",
+          "subCategory": "Vertical Farming Solutions",
+          "investor": "Peyush Bansal, Namita Thapar",
+          "valuation": "6.3"
+        },
+        {
+          "name": "VistaWear",
+          "category": "Fashion",
+          "subCategory": "Smart Clothing",
+          "investor": "Anupam Mittal, Vineeta Singh",
+          "valuation": "5.4"
+        },
+        {
+          "name": "WellNest",
+          "category": "Health & Wellness",
+          "subCategory": "Holistic Wellness Products",
+          "investor": "All Sharks",
+          "valuation": "7.5"
+        },
+        {
+          "name": "ZenBrew",
+          "category": "Beverages",
+          "subCategory": "Organic Herbal Tea",
+          "investor": "Aman Gupta, Vineeta Singh",
+          "valuation": "4.6"
+        }
+      ]
+      
+      
   }
   
