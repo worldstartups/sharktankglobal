@@ -75,6 +75,9 @@ const InvestorsPage = () => {
             </div>
           ))}
         </div>
+        <footer style={{ marginTop: 'auto', textAlign: 'center' }}>
+        <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
+      </footer>
       </div>
     </div>
   );

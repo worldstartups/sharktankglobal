@@ -57,7 +57,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <footer>
+      <footer style={{ marginTop: 'auto', textAlign: 'center' }}>
         <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
       </footer>
     </div>
