@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import investors from "../data/investors.json";
 import Header from "../components/Header"; // ✅ Import Header
@@ -8,13 +8,22 @@ import backgroundImage from '../assets/shark7.jpg'; // Static background image
 const InvestorsPage = () => {
   const { season } = useParams(); // Get season from URL
   const [selectedSeason, setSelectedSeason] = useState("season1"); // Default: Season 1
+  const [background, setBackground] = useState(""); // State for the background image
   const seasonInvestors = investors[selectedSeason] || [];
+
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = backgroundImage; // Preload the background image
+    preloadImage.onload = () => {
+      setBackground(backgroundImage); // Once loaded, set the background
+    };
+  }, []); // Runs only once on component mount
 
   return (
     <div
       className="investors-container"
       style={{
-        backgroundImage: `url(${backgroundImage})`, // Set background image
+        backgroundImage: `url(${background})`, // Dynamically set the background image after it's loaded
         backgroundSize: "cover", // Ensure the image covers the full screen
         backgroundPosition: "center center", // Center the image
         backgroundRepeat: "no-repeat", // Prevent image repetition

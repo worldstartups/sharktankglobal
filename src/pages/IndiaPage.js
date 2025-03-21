@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./IndiaPage.css";
 import companies from "../data/companies.json";
 import Header from "../components/Header"; // ✅ Import the Header component
-import backgroundImages from '../assets/backgroundImages.json'; // If you want to use JSON-based images
 import sharkImage from '../assets/shark8.jpg'; // Import the image directly if needed
 
 const IndiaPage = () => {
@@ -18,6 +17,15 @@ const IndiaPage = () => {
     minValuation: "",
     maxValuation: "",
   });
+  const [background, setBackground] = useState(""); // State for the background image
+
+  useEffect(() => {
+    const preloadImage = new Image();
+    preloadImage.src = sharkImage; // Preload the background image
+    preloadImage.onload = () => {
+      setBackground(sharkImage); // Once loaded, set the background
+    };
+  }, []); // Runs only once on component mount
 
   const handleSort = (column) => {
     const order = sortColumn === column && sortOrder === "asc" ? "desc" : "asc";
@@ -80,7 +88,7 @@ const IndiaPage = () => {
     <div
       className="india-container"
       style={{
-        backgroundImage: `url(${sharkImage})`, // Use the local image or from JSON
+        backgroundImage: `url(${background})`, // Dynamically set the background image
         backgroundSize: "cover", // Ensures it covers the whole screen
         backgroundPosition: "center center", // Centers the image
         backgroundRepeat: "no-repeat", // Prevents the image from repeating
