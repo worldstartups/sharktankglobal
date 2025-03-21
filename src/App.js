@@ -7,10 +7,10 @@ import InvestorsPage from "./pages/InvestorsPage";
 function App() {
   return (
     <Routes>
-    <Route path="/sharktankglobal" element={<HomePage />} />
-    <Route path="/sharktankglobal/india" element={<IndiaPage />} />
-    <Route path="/sharktankglobal/india/investors/:season" element={<InvestorsPage />} />
-  </Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/india" element={<IndiaPage />} />
+      <Route path="/india/investors/:season" element={<InvestorsPage />} /> 
+    </Routes>
   );
 }
 
