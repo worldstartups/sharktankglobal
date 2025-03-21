@@ -1,0 +1,119 @@
+.investors-container {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Investors List - Responsive Layout */
+.investors-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers cards properly */
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Investor Card */
+.investor-card {
+    flex: 1 1 calc(33.33% - 20px); /* Adjusts card width based on screen */
+    max-width: 300px; /* Prevents overly large cards */
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* For small screens, make cards full width */
+@media (max-width: 768px) {
+    .investor-card {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .investor-card {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+}
+
+/* Hover Effect */
+.investor-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Image Container */
+.investor-image-container {
+    position: relative;
+}
+
+/* Default & Hover Image */
+.investor-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hide Default Image on Hover */
+.investor-card:hover .investor-image-default {
+    opacity: 0;
+}
+
+/* Show Hover Image */
+.investor-card:hover .investor-image-hover {
+    opacity: 1;
+}
+
+/* Initially Hide Hover Image */
+.investor-image-hover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Investor Info */
+.investor-info {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.investor-info h3 {
+    margin: 10px 0;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.investor-info p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+/* Website Link */
+.investor-website-link {
+    display: block;
+    margin-top: 10px;
+    color: #00aced;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.investor-website-link:hover {
+    text-decoration: underline;
+}

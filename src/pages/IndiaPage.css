@@ -1,18 +1,54 @@
-/* Background and Page Styling */
-.india-container {
-    background-color: black;
-    color: white;
-    min-height: 100vh;
-    padding: 20px;
-    font-family: "Arial", sans-serif;
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px; /* Space on both sides */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Ensures padding is included */
+    overflow: hidden;
 }
 
-/* Page Title */
+
+/* Page Title - Left Aligned */
 .page-title {
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin: 0;
     text-align: left;
+}
+
+.view-investors-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    white-space: nowrap; /* Prevents text wrapping */
+    max-width: 100%; /* Ensures it never overflows */
+    overflow: hidden;
+    text-overflow: ellipsis; /* If too long, show "..." */
+    position: relative;
+}
+
+
+.view-investors-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 768px) {
+    .view-investors-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+        max-width: 90%; /* Prevents cutting on smaller screens */
+        text-align: center;
+    }
 }
 
 /* Tabs Container */

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./IndiaPage.css";
+import { Link } from "react-router-dom";
 import companies from "../data/companies.json";
 
 const IndiaPage = () => {
@@ -72,8 +73,13 @@ const IndiaPage = () => {
 
   return (
     <div className="india-container">
-      <h1 className="page-title">Shark Tank India Startups</h1>
-
+      {/* Header */}
+      <div className="header-container">
+        <h1 className="page-title">Shark Tank India Startups</h1>
+        <Link to={`/india/investors/${activeTab}`} className="view-investors-btn">
+         Investors
+        </Link>
+      </div>
       {/* Tabs */}
       <div className="tabs">
         {["season1", "season2", "season3", "season4"].map((season) => (

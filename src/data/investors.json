@@ -1,0 +1,301 @@
+{
+    "season1": [
+      {
+        "name": "Aman Gupta",
+        "company": "boAt",
+        "designation": "Co-Founder & CMO",
+        "born": "4 March 1982",
+        "education": "MBA - Indian School of Business",
+        "image": "/images/Aman.jpeg",
+        "hoverImage": "/images/Amanhover.jpeg",
+        "websiteLink": "https://www.boat-lifestyle.com/"
+      },
+      {
+        "name": "Ashneer Grover",
+        "company": "BharatPe",
+        "designation": "Co-Founder & Former MD",
+        "born": "14 June 1982",
+        "education": "IIT Delhi, IIM Ahmedabad",
+        "image": "/images/Ashneer.jpeg",
+        "hoverImage": "/images/Ashneerhover.jpeg",
+        "websiteLink": "https://bharatpe.com/"
+      },
+      {
+        "name": "Anupam Mittal",
+        "company": "Shaadi.com",
+        "designation": "Founder & CEO",
+        "born": "23 December 1971",
+        "education": "Boston College - MBA",
+        "image": "/images/Anupam.jpg",
+        "hoverImage": "/images/Anupamhover.jpg",
+        "websiteLink": "https://www.shaadi.com/"
+      },
+      {
+        "name": "Namita Thapar",
+        "company": "Emcure Pharmaceuticals",
+        "designation": "Executive Director",
+        "born": "21 March 1977",
+        "education": "MBA - Duke University",
+        "image": "/images/Namita.jpeg",
+        "hoverImage": "/images/Namitahover.jpeg",
+        "websiteLink": "https://www.emcure.com/"
+      },
+      {
+        "name": "Peyush Bansal",
+        "company": "Lenskart",
+        "designation": "Founder & CEO",
+        "born": "26 April 1985",
+        "education": "McGill University, IIM Bangalore",
+        "image": "/images/Peyush.jpeg",
+        "hoverImage": "/images/Peyushhover.jpeg",
+        "websiteLink": "https://www.lenskart.com/"
+      },
+      {
+        "name": "Vineeta Singh",
+        "company": "Sugar Cosmetics",
+        "designation": "Co-Founder & CEO",
+        "born": "1983",
+        "education": "IIT Madras, IIM Ahmedabad",
+        "image": "/images/Vineeta.jpeg",
+        "hoverImage": "/images/Vineetahover.jpeg",
+        "websiteLink": "https://in.sugarcosmetics.com/"
+      },
+      {
+        "name": "Ghazal Alagh",
+        "company": "Mamaearth",
+        "designation": "Co-Founder & CIO",
+        "born": "2 September 1988",
+        "education": "Punjab University",
+        "image": "/images/Ghazal.jpeg",
+        "hoverImage": "/images/Ghazalhover.jpeg",
+        "websiteLink": "https://mamaearth.in/"
+      }
+    ],
+    
+        "season2": [
+          {
+            "name": "Aman Gupta",
+            "company": "boAt",
+            "designation": "Co-Founder & CMO",
+            "born": "4 March 1982",
+            "education": "MBA - Indian School of Business",
+            "image": "/images/Aman.jpeg",
+            "hoverImage": "/images/Amanhover.jpeg",
+            "websiteLink": "https://www.boat-lifestyle.com/"
+          },
+          {
+            "name": "Anupam Mittal",
+            "company": "Shaadi.com",
+            "designation": "Founder & CEO",
+            "born": "23 December 1971",
+            "education": "Boston College - MBA",
+            "image": "/images/Anupam.jpg",
+            "hoverImage": "/images/Anupamhover.jpg",
+            "websiteLink": "https://www.shaadi.com/"
+          },
+          {
+            "name": "Namita Thapar",
+            "company": "Emcure Pharmaceuticals",
+            "designation": "Executive Director",
+            "born": "21 March 1977",
+            "education": "MBA - Duke University",
+            "image": "/images/Namita.jpeg",
+            "hoverImage": "/images/Namitahover.jpeg",
+            "websiteLink": "https://www.emcure.com/"
+          },
+          {
+            "name": "Peyush Bansal",
+            "company": "Lenskart",
+            "designation": "Founder & CEO",
+            "born": "26 April 1985",
+            "education": "McGill University, IIM Bangalore",
+            "image": "/images/Peyush.jpeg",
+            "hoverImage": "/images/Peyushhover.jpeg",
+            "websiteLink": "https://www.lenskart.com/"
+          },
+          {
+            "name": "Vineeta Singh",
+            "company": "Sugar Cosmetics",
+            "designation": "Co-Founder & CEO",
+            "born": "1983",
+            "education": "IIT Madras, IIM Ahmedabad",
+            "image": "/images/Vineeta.jpeg",
+            "hoverImage": "/images/Vineetahover.jpeg",
+            "websiteLink": "https://in.sugarcosmetics.com/"
+          },
+          {
+            "name": "Amit Jain",
+            "company": "CarDekho",
+            "designation": "Co-Founder & CEO",
+            "born": "12 November 1977",
+            "education": "B.Tech - IIT Delhi",
+            "image": "/images/Amit.jpeg",
+            "hoverImage": "/images/Amithover.jpeg",
+            "websiteLink": "https://www.cardekho.com/"
+          }
+        ],
+        
+            "season3": [
+              {
+                "name": "Aman Gupta",
+                "company": "boAt",
+                "designation": "Co-Founder & CMO",
+                "born": "4 March 1982",
+                "education": "MBA - Indian School of Business",
+                "image": "/images/Aman.jpeg",
+                "hoverImage": "/images/Amanhover.jpeg",
+                "websiteLink": "https://www.boat-lifestyle.com/"
+              },
+              {
+                "name": "Anupam Mittal",
+                "company": "Shaadi.com",
+                "designation": "Founder & CEO",
+                "born": "23 December 1971",
+                "education": "Boston College - MBA",
+                "image": "/images/Anupam.jpg",
+                "hoverImage": "/images/Anupamhover.jpg",
+                "websiteLink": "https://www.shaadi.com/"
+              },
+              {
+                "name": "Namita Thapar",
+                "company": "Emcure Pharmaceuticals",
+                "designation": "Executive Director",
+                "born": "21 March 1977",
+                "education": "MBA - Duke University",
+                "image": "/images/Namita.jpeg",
+                "hoverImage": "/images/Namitahover.jpeg",
+                "websiteLink": "https://www.emcure.com/"
+              },
+              {
+                "name": "Peyush Bansal",
+                "company": "Lenskart",
+                "designation": "Founder & CEO",
+                "born": "26 April 1985",
+                "education": "McGill University, IIM Bangalore",
+                "image": "/images/Peyush.jpeg",
+                "hoverImage": "/images/Peyushhover.jpeg",
+                "websiteLink": "https://www.lenskart.com/"
+              },
+              {
+                "name": "Vineeta Singh",
+                "company": "Sugar Cosmetics",
+                "designation": "Co-Founder & CEO",
+                "born": "1983",
+                "education": "IIT Madras, IIM Ahmedabad",
+                "image": "/images/Vineeta.jpeg",
+                "hoverImage": "/images/Vineetahover.jpeg",
+                "websiteLink": "https://in.sugarcosmetics.com/"
+              },
+              {
+                "name": "Amit Jain",
+                "company": "CarDekho",
+                "designation": "Co-Founder & CEO",
+                "born": "12 November 1977",
+                "education": "B.Tech - IIT Delhi",
+                "image": "/images/Amit.jpeg",
+                "hoverImage": "/images/Amithover.jpeg",
+                "websiteLink": "https://www.cardekho.com/"
+              },
+              {
+                "name": "Ritesh Agarwal",
+                "company": "OYO Rooms",
+                "designation": "Founder & CEO",
+                "born": "16 November 1993",
+                "education": "College Dropout",
+                "image": "/images/Ritesh.jpg",
+                "hoverImage": "/images/Riteshhover.jpg",
+                "websiteLink": "https://www.oyorooms.com/"
+              }
+            ],
+            
+                "season4": [
+                  {
+                    "name": "Aman Gupta",
+                    "company": "boAt",
+                    "designation": "Co-Founder & CMO",
+                    "born": "4 March 1982",
+                    "education": "MBA - Indian School of Business",
+                    "image": "/images/Aman.jpeg",
+                    "hoverImage": "/images/Amanhover.jpeg",
+                    "websiteLink": "https://www.boat-lifestyle.com/"
+                  },
+                  {
+                    "name": "Anupam Mittal",
+                    "company": "Shaadi.com",
+                    "designation": "Founder & CEO",
+                    "born": "23 December 1971",
+                    "education": "Boston College - MBA",
+                    "image": "/images/Anupam.jpg",
+                    "hoverImage": "/images/Anupamhover.jpg",
+                    "websiteLink": "https://www.shaadi.com/"
+                  },
+                  {
+                    "name": "Namita Thapar",
+                    "company": "Emcure Pharmaceuticals",
+                    "designation": "Executive Director",
+                    "born": "21 March 1977",
+                    "education": "MBA - Duke University",
+                    "image": "/images/Namita.jpeg",
+                    "hoverImage": "/images/Namitahover.jpeg",
+                    "websiteLink": "https://www.emcure.com/"
+                  },
+                  {
+                    "name": "Peyush Bansal",
+                    "company": "Lenskart",
+                    "designation": "Founder & CEO",
+                    "born": "26 April 1985",
+                    "education": "McGill University, IIM Bangalore",
+                    "image": "/images/Peyush.jpeg",
+                    "hoverImage": "/images/Peyushhover.jpeg",
+                    "websiteLink": "https://www.lenskart.com/"
+                  },
+                  {
+                    "name": "Vineeta Singh",
+                    "company": "Sugar Cosmetics",
+                    "designation": "Co-Founder & CEO",
+                    "born": "1983",
+                    "education": "IIT Madras, IIM Ahmedabad",
+                    "image": "/images/Vineeta.jpeg",
+                    "hoverImage": "/images/Vineetahover.jpeg",
+                    "websiteLink": "https://in.sugarcosmetics.com/"
+                  },
+                  {
+                    "name": "Amit Jain",
+                    "company": "CarDekho",
+                    "designation": "Co-Founder & CEO",
+                    "born": "12 November 1977",
+                    "education": "B.Tech - IIT Delhi",
+                    "image": "/images/Amit.jpeg",
+                    "hoverImage": "/images/Amithover.jpeg",
+                    "websiteLink": "https://www.cardekho.com/"
+                  },
+                  {
+                    "name": "Deepinder Goyal",
+                    "company": "Zomato",
+                    "designation": "Founder & CEO",
+                    "born": "26 January 1983",
+                    "education": "IIT Delhi",
+                    "image": "/images/Deepinder.jpg",
+                    "hoverImage": "/images/Deepinderhover.jpg",
+                    "websiteLink": "https://www.zomato.com/"
+                  },
+                  {
+                    "name": "Ronnie Screwvala",
+                    "company": "UpGrad",
+                    "designation": "Co-Founder & Chairperson",
+                    "born": "8 September 1956",
+                    "education": "University of Mumbai",
+                    "image": "/images/Ronnie.jpeg",
+                    "hoverImage": "/images/Ronniehover.jpeg",
+                    "websiteLink": "https://www.upgrad.com/"
+                  }
+                ]
+              }
+              
+          
+          
+      
+      
+    
+  
+  
