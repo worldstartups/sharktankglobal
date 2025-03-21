@@ -17,7 +17,7 @@ const HomePage = () => {
     backgroundSize: 'cover', // Ensure it covers the entire screen
     backgroundPosition: 'center center', // Center the image
     backgroundRepeat: 'no-repeat', // Prevent repeating the image
-    height: '100vh', // Full viewport height
+    height: '150vh', // Full viewport height
     width: '100%', // Ensure it takes the full width
     objectFit: 'cover', // Ensures the image scales to cover the area without being distorted
       }}
