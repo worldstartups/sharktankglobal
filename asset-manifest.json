@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/sharktankglobal/static/css/main.12dbaf96.css",
-    "main.js": "/sharktankglobal/static/js/main.32f336b1.js",
+    "main.js": "/sharktankglobal/static/js/main.e11ccfb5.js",
     "static/media/shark9.jpg": "/sharktankglobal/static/media/shark9.3d8f4e90ca7b8f45bcd9.jpg",
     "static/media/shark7.jpg": "/sharktankglobal/static/media/shark7.3e9951ba167e099dd500.jpg",
     "static/media/shark8.jpg": "/sharktankglobal/static/media/shark8.fda81752613c2fa436d3.jpg",
     "index.html": "/sharktankglobal/index.html",
     "main.12dbaf96.css.map": "/sharktankglobal/static/css/main.12dbaf96.css.map",
-    "main.32f336b1.js.map": "/sharktankglobal/static/js/main.32f336b1.js.map"
+    "main.e11ccfb5.js.map": "/sharktankglobal/static/js/main.e11ccfb5.js.map"
   },
   "entrypoints": [
     "static/css/main.12dbaf96.css",
-    "static/js/main.32f336b1.js"
+    "static/js/main.e11ccfb5.js"
   ]
 }
