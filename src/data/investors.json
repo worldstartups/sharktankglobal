@@ -6,8 +6,8 @@
         "designation": "Co-Founder & CMO",
         "born": "4 March 1982",
         "education": "MBA - Indian School of Business",
-        "image": "./images/Aman.jpeg",
-        "hoverImage": "./images/Amanhover.jpeg",
+        "image": "https://worldstartups.github.io/sharktankglobal/images/Aman.jpeg",
+        "hoverImage": "/images/Amanhover.jpeg",
         "websiteLink": "https://www.boat-lifestyle.com/"
       },
       {
