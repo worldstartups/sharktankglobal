@@ -31,7 +31,7 @@ const HomePage = () => {
     >
       <header>
         <div className="nav-buttons">
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => navigate('/')}>Home</Link> {/* Ensures Home page loads */}
           <Link to="/about">About</Link>
           <div className="dropdown">
             <select onChange={(e) => navigate(e.target.value)}>
