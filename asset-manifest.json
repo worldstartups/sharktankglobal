@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/sharktankglobal/static/css/main.6fb9451e.css",
-    "main.js": "/sharktankglobal/static/js/main.5e43f464.js",
+    "main.js": "/sharktankglobal/static/js/main.ca55e4a7.js",
     "index.html": "/sharktankglobal/index.html",
     "main.6fb9451e.css.map": "/sharktankglobal/static/css/main.6fb9451e.css.map",
-    "main.5e43f464.js.map": "/sharktankglobal/static/js/main.5e43f464.js.map"
+    "main.ca55e4a7.js.map": "/sharktankglobal/static/js/main.ca55e4a7.js.map"
   },
   "entrypoints": [
     "static/css/main.6fb9451e.css",
-    "static/js/main.5e43f464.js"
+    "static/js/main.ca55e4a7.js"
   ]
 }
