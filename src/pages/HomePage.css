@@ -9,6 +9,7 @@ body {
     text-align: center;
 }
 
+/* Header */
 header {
     background-color: #000;
     color: white;
@@ -20,13 +21,16 @@ header {
     gap: 20px;
 }
 
+/* Navigation Buttons */
 .nav-buttons {
     display: flex;
     gap: 15px;
     align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-.nav-buttons a, .dropdown select {
+.nav-buttons a,
+.dropdown select {
     background: transparent;
     color: white;
     text-decoration: none;
@@ -39,10 +43,12 @@ header {
     transition: 0.3s ease;
 }
 
+/* Hover Effect */
 .nav-buttons a:hover {
     background: #444;
 }
 
+/* Dropdown */
 .dropdown {
     position: relative;
 }
@@ -53,8 +59,9 @@ header {
     outline: none;
 }
 
+/* Hero Section */
 .hero {
-    padding: 80px 20px;
+    padding: 60px 20px;
     color: white;
     font-size: 32px;
     font-weight: bold;
@@ -65,11 +72,14 @@ header {
     background-color: #161b22;
 }
 
+/* Hero Section Text */
 .hero p {
     max-width: 600px;
     font-size: 18px;
+    margin-top: 10px;
 }
 
+/* Featured Section */
 .featured-section {
     display: flex;
     justify-content: center;
@@ -78,6 +88,7 @@ header {
     flex-wrap: wrap;
 }
 
+/* Featured Show Cards */
 .featured-show {
     width: 300px;
     background: #161b22;
@@ -89,6 +100,7 @@ header {
     cursor: pointer;
 }
 
+/* Hover Effect */
 .featured-show:hover {
     transform: scale(1.05);
 }
@@ -98,9 +110,54 @@ header {
     margin: 10px 0;
 }
 
+/* Footer */
 footer {
     background-color: #000;
     color: white;
     padding: 15px;
     margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    /* Adjust Header */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+    }
+
+    /* Hero Section */
+    .hero {
+        font-size: 24px;
+        padding: 50px 15px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    /* Featured Section */
+    .featured-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .featured-show {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

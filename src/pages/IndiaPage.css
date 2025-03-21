@@ -1,23 +1,25 @@
+/* Header Container */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 20px; /* Space on both sides */
+    padding: 10px 20px;
     margin-bottom: 20px;
-    box-sizing: border-box; /* Ensures padding is included */
+    box-sizing: border-box;
     overflow: hidden;
+    flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
 }
 
-
-/* Page Title - Left Aligned */
+/* Page Title */
 .page-title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     margin: 0;
     text-align: left;
 }
 
+/* View Investors Button */
 .view-investors-btn {
     background: transparent;
     border: 2px solid white;
@@ -28,14 +30,13 @@
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s ease-in-out;
-    white-space: nowrap; /* Prevents text wrapping */
-    max-width: 100%; /* Ensures it never overflows */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* If too long, show "..." */
+    text-overflow: ellipsis;
     position: relative;
 }
 
-
+/* Hover Effect */
 .view-investors-btn:hover {
     background: white;
     color: black;
@@ -43,11 +44,21 @@
 
 /* Responsive Fix */
 @media screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
     .view-investors-btn {
         font-size: 14px;
         padding: 8px 12px;
-        max-width: 90%; /* Prevents cutting on smaller screens */
-        text-align: center;
+        max-width: 90%;
     }
 }
 
@@ -58,6 +69,9 @@
     margin-bottom: 20px;
     border-bottom: 2px solid #555;
     padding-bottom: 10px;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar */
 }
 
 /* Tabs Styling */
@@ -71,14 +85,16 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border-radius: 5px 5px 0 0;
-    position: relative;
+    flex-shrink: 0;
 }
 
-/* Hover Effect - Tab Pops Up */
-.tab:hover {
-    background: linear-gradient(to right, #666, #333);
-    transform: translateY(-2px);
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+/* Hover Effect - Disable on Mobile */
+@media (hover: hover) {
+    .tab:hover {
+        background: linear-gradient(to right, #666, #333);
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+    }
 }
 
 /* Active Tab Styling */
@@ -100,6 +116,7 @@
     border-radius: 5px;
 }
 
+/* Filter Inputs */
 .filters input,
 .filters select {
     padding: 10px;
@@ -118,16 +135,29 @@
     border-color: #007bff;
 }
 
+/* Mobile: Filters Adjust to Full Width */
+@media screen and (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters input,
+    .filters select {
+        width: 100%;
+    }
+}
+
 /* Table Container */
 .table-container {
     width: 100%;
-    overflow-x: auto; /* Makes table scrollable on small screens */
+    overflow-x: auto; /* Enables horizontal scrolling */
 }
 
 /* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px; /* Prevents table from squishing */
 }
 
 /* Table Headers */
@@ -148,7 +178,7 @@ th span.sort-icon {
     position: absolute;
     right: 10px;
     top: 30%;
-    font-size: 12px; /* Smaller */
+    font-size: 12px;
     opacity: 0.7;
     cursor: pointer;
     vertical-align: super;
@@ -161,10 +191,11 @@ td {
     border-bottom: 1px solid #444;
 }
 
-/* Serial Number Column */
-td:first-child {
-    font-weight: bold;
+/* Center Align Serial Number */
+td:first-child, th:first-child {
     text-align: center;
+    font-weight: bold;
+    width: 50px;
 }
 
 /* Alternate Row Coloring */
@@ -184,25 +215,10 @@ tr:nth-child(odd) {
     margin-top: 20px;
 }
 
-/* Mobile Responsiveness */
+/* Mobile: Adjust Table Font Size */
 @media screen and (max-width: 768px) {
-    .filters {
-        flex-direction: column;
-    }
-
-    .filters input,
-    .filters select {
-        width: 100%;
-    }
-
     th, td {
         font-size: 14px;
         padding: 8px;
     }
-}
-/* Ensure Serial Number Column is Centered */
-td:first-child, th:first-child {
-    text-align: center;
-    font-weight: bold;
-    width: 50px;
 }

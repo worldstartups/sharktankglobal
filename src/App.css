@@ -1,71 +1,49 @@
-/* General Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f9fa;
-  color: #333;
-  text-align: center;
+/* Season Tabs */
+.season-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* Header */
-.header {
-  background-color: #0073e6;
+.season-tabs button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: #222;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.season-tabs button.active,
+.season-tabs button:hover {
+    background-color: #00aced;
+}
+/* Season Tabs */
+.season-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.season-tabs button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background-color: #222;
   color: white;
-  padding: 20px;
-  font-size: 24px;
-}
-
-/* Navigation */
-.nav {
-  background: #005bb5;
-  padding: 10px;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  margin: 10px;
-  font-size: 18px;
-}
-
-.nav select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   cursor: pointer;
-}
-
-/* Filters */
-.filters {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  padding: 20px;
-  background: white;
-  color: black;
-}
-
-.filters select {
-  padding: 8px;
   border-radius: 5px;
-  background: white;
-  color: black;
+  transition: 0.3s;
 }
 
-/* Companies */
-.company-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+.season-tabs button.active,
+.season-tabs button:hover {
+  background-color: #00aced;
 }
 
-/* Footer */
-.footer {
-  background: #121212;
-  color: white;
-  padding: 20px;
-  margin-top: auto;
-}

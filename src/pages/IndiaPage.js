@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./IndiaPage.css";
 import { Link } from "react-router-dom";
+import "./IndiaPage.css";
 import companies from "../data/companies.json";
+import Header from "../components/Header"; // ✅ Import the Header component
 
 const IndiaPage = () => {
   const [activeTab, setActiveTab] = useState("season1");
@@ -66,20 +67,26 @@ const IndiaPage = () => {
         valueB = parseFloat(valueB.replace(/[^0-9.]/g, "")) || 0;
       }
 
-      return sortOrder === "asc" ? valueA.localeCompare(valueB, undefined, { numeric: true }) : valueB.localeCompare(valueA, undefined, { numeric: true });
+      return sortOrder === "asc"
+        ? valueA.localeCompare(valueB, undefined, { numeric: true })
+        : valueB.localeCompare(valueA, undefined, { numeric: true });
     }
     return 0;
   });
 
   return (
     <div className="india-container">
-      {/* Header */}
+      {/* ✅ Use Header Component */}
+      <Header />
+
+      {/* Page Title & Investors Button */}
       <div className="header-container">
         <h1 className="page-title">Shark Tank India Startups</h1>
         <Link to={`/india/investors/${activeTab}`} className="view-investors-btn">
-         Investors
+          Investors
         </Link>
       </div>
+
       {/* Tabs */}
       <div className="tabs">
         {["season1", "season2", "season3", "season4"].map((season) => (
@@ -95,13 +102,7 @@ const IndiaPage = () => {
 
       {/* Filters */}
       <div className="filters">
-        <input
-          type="text"
-          name="company"
-          placeholder="Search Company"
-          value={filters.company}
-          onChange={handleFilterChange}
-        />
+        <input type="text" name="company" placeholder="Search Company" value={filters.company} onChange={handleFilterChange} />
         
         <select name="category" value={filters.category} onChange={handleFilterChange}>
           <option value="">All</option>
@@ -124,55 +125,43 @@ const IndiaPage = () => {
           ))}
         </select>
 
-        <input
-          type="number"
-          name="minValuation"
-          placeholder="Min Valuation (Cr)"
-          value={filters.minValuation}
-          onChange={handleFilterChange}
-        />
-        <input
-          type="number"
-          name="maxValuation"
-          placeholder="Max Valuation (Cr)"
-          value={filters.maxValuation}
-          onChange={handleFilterChange}
-        />
+        <input type="number" name="minValuation" placeholder="Min Valuation (Cr)" value={filters.minValuation} onChange={handleFilterChange} />
+        <input type="number" name="maxValuation" placeholder="Max Valuation (Cr)" value={filters.maxValuation} onChange={handleFilterChange} />
       </div>
 
       {/* Table */}
       <div className="table-container">
-      <table>
-  <thead>
-    <tr>
-      <th style={{ width: "50px", textAlign: "left" }}>S.No</th> {/* Left-aligned */}
-      {["name", "category", "subCategory", "investor", "valuation"].map((column) => (
-        <th key={column} onClick={() => handleSort(column)} style={{ cursor: "pointer" }}>
-          {column.charAt(0).toUpperCase() + column.slice(1)}
-          {sortColumn === column ? (sortOrder === "asc" ? " ▲" : " ▼") : ""}
-        </th>
-      ))}
-    </tr>
-  </thead>
-  <tbody>
-    {sortedCompanies.length > 0 ? (
-      sortedCompanies.map((company, index) => (
-        <tr key={index}>
-          <td style={{ textAlign: "left", fontWeight: "bold" }}>{index + 1}</td> {/* Left-aligned */}
-          <td>{company.name}</td>
-          <td>{company.category}</td>
-          <td>{company.subCategory}</td>
-          <td>{company.investor}</td>
-          <td>{company.valuation}</td>
-        </tr>
-      ))
-    ) : (
-      <tr>
-        <td colSpan="6" className="no-data">No Data Available</td>
-      </tr>
-    )}
-  </tbody>
-</table>
+        <table>
+          <thead>
+            <tr>
+              <th style={{ width: "50px", textAlign: "left" }}>S.No</th>
+              {["name", "category", "subCategory", "investor", "valuation"].map((column) => (
+                <th key={column} onClick={() => handleSort(column)} style={{ cursor: "pointer" }}>
+                  {column.charAt(0).toUpperCase() + column.slice(1)}
+                  {sortColumn === column ? (sortOrder === "asc" ? " ▲" : " ▼") : ""}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {sortedCompanies.length > 0 ? (
+              sortedCompanies.map((company, index) => (
+                <tr key={index}>
+                  <td style={{ textAlign: "left", fontWeight: "bold" }}>{index + 1}</td>
+                  <td>{company.name}</td>
+                  <td>{company.category}</td>
+                  <td>{company.subCategory}</td>
+                  <td>{company.investor}</td>
+                  <td>{company.valuation}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="6" className="no-data">No Data Available</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

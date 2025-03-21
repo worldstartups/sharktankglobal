@@ -1,23 +1,66 @@
+/* Container */
 .investors-container {
     padding: 20px;
     text-align: center;
-    font-family: 'Poppins', sans-serif; 
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
 }
 
-/* Investors List - Responsive Layout */
+/* Tabs Container */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    overflow-x: auto; /* Enables scrolling if tabs overflow */
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Tabs Styling */
+.tab {
+    background: linear-gradient(to right, #444, #222);
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Hover Effect - Disable on Mobile */
+@media (hover: hover) {
+    .tab:hover {
+        background: linear-gradient(to right, #666, #333);
+        transform: translateY(-2px);
+        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Active Tab Styling */
+.tab.active {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Investors List */
 .investors-list {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    justify-content: center; /* Centers cards properly */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     padding: 10px;
 }
 
 /* Investor Card */
 .investor-card {
-    flex: 1 1 calc(33.33% - 20px); /* Adjusts card width based on screen */
-    max-width: 300px; /* Prevents overly large cards */
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: 280px;
     background: #222;
     padding: 20px;
     border-radius: 12px;
@@ -28,63 +71,79 @@
     cursor: pointer;
 }
 
-/* For small screens, make cards full width */
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .investor-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: 250px;
+    }
+}
+
 @media (max-width: 768px) {
     .investor-card {
-        flex: 1 1 calc(50% - 20px); /* Two cards per row on medium screens */
+        flex: 1 1 calc(50% - 10px);
+        max-width: 220px;
+    }
+
+    .investors-container {
+        padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .investor-card {
-        flex: 1 1 100%; /* Full width on small screens */
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 15px;
     }
 }
 
-/* Hover Effect */
-.investor-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+/* Hover Effects */
+@media (hover: hover) {
+    .investor-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
 }
 
-/* Image Container */
+/* Image */
 .investor-image-container {
     position: relative;
 }
 
-/* Default & Hover Image */
+/* Adjust Image Size for Mobile */
 .investor-image {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid white;
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Hide Default Image on Hover */
-.investor-card:hover .investor-image-default {
-    opacity: 0;
-}
+/* Disable Image Hover on Mobile */
+@media (hover: hover) {
+    .investor-card:hover .investor-image-default {
+        opacity: 0;
+    }
 
-/* Show Hover Image */
-.investor-card:hover .investor-image-hover {
-    opacity: 1;
-}
+    .investor-image-hover {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
 
-/* Initially Hide Hover Image */
-.investor-image-hover {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    .investor-card:hover .investor-image-hover {
+        opacity: 1;
+    }
 }
 
 /* Investor Info */
@@ -95,14 +154,13 @@
 
 .investor-info h3 {
     margin: 10px 0;
-    font-size: 25px;
-    text-align: center;
+    font-size: 18px;
     font-weight: bold;
 }
 
 .investor-info p {
     margin: 5px 0;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 /* Website Link */
