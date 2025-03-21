@@ -1,7 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
-
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -10,8 +9,9 @@ const HomePage = () => {
     <div>
       <header>
         <div className="nav-buttons">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
+          {/* Use Link component for internal navigation */}
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
           <div className="dropdown">
             <select onChange={(e) => navigate(e.target.value)}>
               <option value="#">Country</option>
