@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // Import React and useState in one line
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import backgroundImages from '../assets/backgroundImages.json'; // Import the JSON file
@@ -20,41 +20,69 @@ const HomePage = () => {
         height: '100vh', // Full viewport height
       }}
     >
-      <header>
-        <div className="nav-buttons">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <div className="dropdown">
-            <select onChange={(e) => navigate(e.target.value)}>
-              <option value="#">Country</option>
-              <option value="/india">India</option>
-              <option value="/us">USA</option>
-              <option value="/australia">Australia</option>
-            </select>
+      <header className="home-header">
+        {/* Logo */}
+        <div className="logo" onClick={() => navigate("/")}>
+          
+        </div>
+
+        {/* Navigation */}
+        <nav className="home-nav">
+          <Link to="/" className="nav-link">All Products</Link>
+          <Link to="/seasons" className="nav-link">Categories</Link>
+           {/* Seasons Dropdown */}
+         <div className="dropdown">
+            <Link to="/seasons" className="nav-link">Seasons</Link>
+            <div className="dropdown-content">
+              <Link to="/seasons/1" className="dropdown-item">Season 1</Link>
+              <Link to="/seasons/2" className="dropdown-item">Season 2</Link>
+              <Link to="/seasons/3" className="dropdown-item">Season 3</Link>
+              <Link to="/seasons/4" className="dropdown-item">Season 4</Link>
+            </div>
           </div>
+          <Link to="/popular" className="nav-link">Popular</Link>
+          <Link to="/investors" className="nav-link">Investors</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/more" className="nav-link">More</Link>
+        </nav>
+
+        
+
+     
+        {/* Search bar (Placeholder only) */}
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search Products..."
+            disabled
+          />
         </div>
       </header>
 
+      
+
+      {/* Hero Section */}
       <section className="hero">
         <h2>Explore Shark Tank Startups from Around the World!</h2>
-        <p>Discover groundbreaking startups, their investments, and their current status across various Shark Tank editions worldwide.</p>
       </section>
 
+      {/* Featured Section */}
       <div className="featured-section">
         <div className="featured-show" onClick={() => navigate("/india")}>
-          <h3>Shark Tank India</h3>
+          <h3>Popular 1</h3>
           <p>Explore the most exciting startups from India.</p>
         </div>
         <div className="featured-show" onClick={() => navigate("/us")}>
-          <h3>Shark Tank US</h3>
+          <h3>Popular 2</h3>
           <p>Discover groundbreaking businesses from the USA.</p>
         </div>
         <div className="featured-show" onClick={() => navigate("/australia")}>
-          <h3>Shark Tank Australia</h3>
+          <h3>Popular 3</h3>
           <p>See the most innovative companies from Australia.</p>
         </div>
       </div>
 
+      {/* Footer */}
       <footer>
         <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
       </footer>
