@@ -11,7 +11,8 @@ const SeasonsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('/SeasonsProducts.json');
+        const response = await axios.get('/sharktankglobal/SeasonsProducts.json'); // Adjust path if necessary
+
         const data = await response.json();
 
         // Get the products for the specific season
