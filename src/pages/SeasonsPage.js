@@ -7,21 +7,21 @@ const SeasonsPage = () => {
   const { seasonId } = useParams(); // Get the seasonId from the URL
   const [products, setProducts] = useState([]);
   
-  // Fetch the products from the SeasonsProducts.json file
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get('/sharktankglobal/SeasonsProducts.json'); // Adjust path if necessary
-
-        const data = await response.json();
-
-        // Get the products for the specific season
-        setProducts(data[`season${seasonId}`] || []);
-      } catch (error) {
+   // Fetch the products from the SeasonsProducts.json file using .then()
+   useEffect(() => {
+    fetch('/seasonsProducts.json') // Adjust path if needed
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setProducts(data[`season${seasonId}`] || []); // Set the products for the specific season
+      })
+      .catch((error) => {
         console.error('Error fetching season products:', error);
-      }
-    };
-    fetchProducts();
+      });
   }, [seasonId]);
 
   return (
