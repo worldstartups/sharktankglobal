@@ -43,7 +43,7 @@ const HomePage = () => {
       </div>
 
       <footer>
-        <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
+        <p>&copy; 2025 Shark Tank Global | Made in india ❤️</p>
       </footer>
     </div>
   );
