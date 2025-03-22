@@ -20,13 +20,7 @@ const HomePage = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${background})`, 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center center', 
-        backgroundRepeat: 'no-repeat', 
-        height: '150vh', 
-        width: '100%', 
-        objectFit: 'cover', 
+        
       }}
     >
       <header>
