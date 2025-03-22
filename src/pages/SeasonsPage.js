@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './SeasonsPage.css'; // Add your styles
 
-const SeasonPage = () => {
+const SeasonsPage = () => {
   const { seasonId } = useParams(); // Get the seasonId from the URL
   const [products, setProducts] = useState([]);
   
@@ -45,4 +45,4 @@ const SeasonPage = () => {
   );
 };
 
-export default SeasonPage;
+export default SeasonsPage;
