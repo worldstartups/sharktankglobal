@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${background})`, // Dynamically set background image
+       
         backgroundSize: 'cover', // Ensure it covers the screen
         backgroundPosition: 'center center', // Center the image
         backgroundRepeat: 'no-repeat', // Don't repeat the image
