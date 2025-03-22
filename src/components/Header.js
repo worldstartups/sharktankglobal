@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import "./Header.css";
 
 const Header = () => {
@@ -42,15 +41,11 @@ const Header = () => {
           disabled
         />
         <button disabled>
-          <FaSearch />
+          
         </button>
       </div>
 
-      {/* Cart & User Icons */}
-      <div className="header-icons">
-        <FaShoppingCart className="icon" />
-        <FaUser className="icon" />
-      </div>
+    
     </header>
   );
 };

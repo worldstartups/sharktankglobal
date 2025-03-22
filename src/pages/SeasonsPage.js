@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './SeasonsPage.css'; // Add your styles
+import axios from 'axios'; 
 
 const SeasonsPage = () => {
   const { seasonId } = useParams(); // Get the seasonId from the URL
@@ -10,7 +11,7 @@ const SeasonsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/SeasonsProducts.json'); // Adjust path if needed
+        const response = await axios.get('/SeasonsProducts.json');
         const data = await response.json();
 
         // Get the products for the specific season
