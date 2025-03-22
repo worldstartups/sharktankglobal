@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import sharkImage from '../assets/shark9.webp'; 
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [background, setBackground] = useState(sharkImage); 
-
-  useEffect(() => {
-    const preloadImage = new Image();
-    preloadImage.src = sharkImage; // Preload the background image
-
-    // Once the image is loaded, set the background image
-    preloadImage.onload = () => {
-      setBackground(sharkImage);
-    };
-  }, []);
 
   return (
-    <div
-      style={{
-        
-      }}
-    >
+    <div className="homepage">
       <header>
         <div className="nav-buttons">
-          <Link to="/" onClick={() => navigate('/')}>Home</Link> {/* Ensures Home page loads */}
+          <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <div className="dropdown">
             <select onChange={(e) => navigate(e.target.value)}>
@@ -58,7 +42,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <footer style={{ marginTop: 'auto', textAlign: 'center' }}>
+      <footer>
         <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
       </footer>
     </div>
