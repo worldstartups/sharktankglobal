@@ -6,7 +6,7 @@ import seasonsData from "../pages/SeasonsProducts.json";
 const Header = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-
+ 
   // Fetch categories from SeasonsProducts.json
   useEffect(() => {
     const allCategories = new Set();

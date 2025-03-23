@@ -1,12 +1,7 @@
-/* HomePage Header Styles */
-.home-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.home-page{
+  text-align: center;
+  padding: 60px;
+}
   
   /* Navigation Styles */
   .home-nav {
