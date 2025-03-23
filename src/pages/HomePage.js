@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import seasonsData from "./SeasonsProducts.json"; // Import the SeasonsProducts.json file
 import "./HomePage.css";
+import ContactPage from "./ContactPage";
 
 
 const HomePage = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
+  const [showContact, setShowContact] = useState(false);
 
   // Fetch the categories from the SeasonsProducts.json file
   useEffect(() => {
@@ -39,7 +41,7 @@ const HomePage = () => {
 
         {/* Navigation */}
         <nav className="home-nav">
-          <Link to="/" className="nav-link">All Products</Link>
+          <Link to="/allproducts" className="nav-link">All Products</Link>
 
           {/* Categories Dropdown */}
 <div className="dropdown">
@@ -70,7 +72,11 @@ const HomePage = () => {
 
           <Link to="/popular" className="nav-link">Popular</Link>
           <Link to="/investors" className="nav-link">Investors</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+         {/* Contact Button */}
+<button className="nav-link contact-btn" onClick={() => setShowContact(true)}>Contact</button>
+
+{/* Show Contact Popup */}
+{showContact && <ContactPage onClose={() => setShowContact(false)} />}
           <Link to="/more" className="nav-link">More</Link>
         </nav>
 

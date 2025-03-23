@@ -4,7 +4,12 @@ import HomePage from "./pages/HomePage";
 import IndiaPage from "./pages/IndiaPage";
 import InvestorsPage from "./pages/InvestorsPage"; 
 import SeasonsPage from './pages/SeasonsPage';
-import CategoryPage from "./pages/CategoryPage";  // Import the SeasonPage component
+import CategoryPage from "./pages/CategoryPage";  
+import PopularPage from "./pages/PopularPage";
+import AllProductsPage from "./pages/AllProductsPage"; 
+import ContactPage from "./pages/ContactPage"; 
+
+
 
 function App() {
   return (
@@ -15,6 +20,9 @@ function App() {
       <Route path="/seasons/:seasonId" element={<SeasonsPage />} /> {/* Dynamic route for seasons */}
       <Route path="/investors" element={<InvestorsPage />} />  {/* Add the investor route */}
       <Route path="/categories/:categoryName" element={<CategoryPage />} /> {/* Category Page Route */}
+      <Route path="/popular" element={<PopularPage />} /> {/* Category Page Route */}
+      <Route path="/allproducts" element={<AllProductsPage />} /> {/* Add All Products route */}
+      <Route path="/contact" element={<ContactPage />} /> {/* Add All Products route */}
     </Routes>
   );
 }
