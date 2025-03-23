@@ -16,7 +16,6 @@ const HomePage = () => {
 
       <div className="home-page">
               <Header /> {/* ✅ Add Header component */}
-            <h1>All Products</h1>
 
       {/* Hero Section */}
       <section className="hero">
