@@ -17,7 +17,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       
       <Route path="/india" element={<IndiaPage />} />
-      <Route path="/seasons/:seasonId" element={<SeasonsPage />} /> {/* Dynamic route for seasons */}
+      <Route path="/seasons" element={<SeasonsPage />} /> {/* Dynamic route for seasons */}
       <Route path="/investors" element={<InvestorsPage />} />  {/* Add the investor route */}
       <Route path="/categories/:categoryName" element={<CategoryPage />} /> {/* Category Page Route */}
       <Route path="/popular" element={<PopularPage />} /> {/* Category Page Route */}

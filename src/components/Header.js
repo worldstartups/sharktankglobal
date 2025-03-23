@@ -45,16 +45,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Seasons Dropdown */}
-      <div className="dropdown">
-        <Link to="/seasons" className="nav-link">Seasons</Link>
-        <div className="dropdown-content">
-          <Link to="/seasons/1" className="dropdown-item">Season 1</Link>
-          <Link to="/seasons/2" className="dropdown-item">Season 2</Link>
-          <Link to="/seasons/3" className="dropdown-item">Season 3</Link>
-          <Link to="/seasons/4" className="dropdown-item">Season 4</Link>
-        </div>
-      </div>
+     {/* Seasons Link (direct navigation to SeasonsPage.js) */}
+     <Link to="/seasons" className="nav-link">Seasons</Link>
 
       <Link to="/popular" className="nav-link">Popular</Link>
       <Link to="/investors" className="nav-link">Investors</Link>
