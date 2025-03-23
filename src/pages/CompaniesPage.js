@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./CompaniesPage.css";
+import Header from "../components/Header";
 
 const CompaniesPage = () => {
   const { country } = useParams();
@@ -16,6 +17,7 @@ const CompaniesPage = () => {
 
   return (
     <div className="companies-page">
+      <Header />
       <h2>Shark Tank {country.charAt(0).toUpperCase() + country.slice(1)}</h2>
       <div className="company-list">
         {companies.map((company, index) => (

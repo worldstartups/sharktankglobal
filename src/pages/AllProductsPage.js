@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import seasonsData from "./SeasonsProducts.json"; // Import products data
 import "./AllProductsPage.css"; // Add styles
+import Header from "../components/Header";
 
 const AllProductsPage = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -17,6 +18,7 @@ const AllProductsPage = () => {
 
   return (
     <div className="all-products-page">
+        <Header /> {/* ✅ Add Header component */}
       <h1>All Products</h1>
       <div className="product-list">
         {allProducts.length === 0 ? (

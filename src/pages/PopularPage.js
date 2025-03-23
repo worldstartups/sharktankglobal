@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import popularData from "./PopularProducts.json"; // Import the JSON file
 import "./PopularPage.css"; // Add styles
+import Header from "../components/Header";
 
 const PopularPage = () => {
   const [popularProducts, setPopularProducts] = useState([]);
@@ -12,6 +13,7 @@ const PopularPage = () => {
 
   return (
     <div className="popular-page">
+        <Header /> {/* ✅ Add Header component */}
       <h1>Popular Products</h1>
       <div className="product-list">
         {popularProducts.length === 0 ? (

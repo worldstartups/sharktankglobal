@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './SeasonsPage.css'; // Add your styles
 import seasonsData from './SeasonsProducts.json';
+import Header from "../components/Header";
 
 const SeasonsPage = () => {
   const { seasonId } = useParams(); // Get the seasonId from the URL
@@ -15,6 +16,7 @@ const SeasonsPage = () => {
 
   return (
     <div className="season-page">
+      <Header />
       <h1>Season {seasonId} Products</h1>
       <div className="product-list">
         {products.length === 0 ? (

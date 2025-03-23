@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";// Import the SeasonsProducts.json file
 import seasonsData from './SeasonsProducts.json';// Add any styling as necessary
+import Header from "../components/Header";
+import "./CategoryPage.css";
 
 const CategoryPage = () => {
   const { categoryName } = useParams(); // Get the category name from the URL
@@ -22,6 +24,7 @@ const CategoryPage = () => {
 
   return (
     <div className="category-page">
+      <Header />
       <h1>{categoryName} Products</h1>
       
       <div className="product-list">
