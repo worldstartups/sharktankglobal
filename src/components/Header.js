@@ -1,89 +1,71 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import "./Header.css";
+import { Link, useNavigate } from "react-router-dom";
+import seasonsData from "../pages/SeasonsProducts.json"; 
+ import "../components/Header.css";// ✅ Updated patimport "./Header.css";
 
 const Header = () => {
-  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
 
-  // Fetch categories when the component mounts
+  // Fetch categories from SeasonsProducts.json
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch('/SeasonsProducts.json'); // Adjust if path is different
-        const data = await response.json();
-
-        // Collect unique categories from all seasons
-        const categorySet = new Set();
-        Object.keys(data).forEach((season) => {
-          data[season].forEach((product) => {
-            categorySet.add(product.category);
-          });
-        });
-
-        // Convert set to array and set the state
-        setCategories([...categorySet]);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-
-    fetchCategories();
+    const allCategories = new Set();
+    Object.values(seasonsData).forEach((season) => {
+      season.forEach((product) => {
+        allCategories.add(product.category);
+      });
+    });
+    setCategories([...allCategories]);
   }, []);
 
   return (
     <header className="header">
       {/* Logo */}
       <div className="logo" onClick={() => navigate("/")}>
-      
+        {/* Add logo if needed */}
       </div>
+
+     
 
       {/* Navigation */}
-      <nav className="nav-links">
-        <a href="/" className="nav-link">All Products</a>
-        <a href="/categories" className="nav-link">Categories</a>
+      <nav className="nav-container">
+    <div className="nav-links">
+    <Link to="/" className="nav-link">Home</Link>
+      <Link to="/allproducts" className="nav-link">All Products</Link>
 
-        {/* Seasons Dropdown */}
-        <div className="dropdown">
-          <a href="/seasons" className="nav-link">Seasons</a>
-          <div className="dropdown-content">
-            <a href="/seasons/1">Season 1</a>
-            <a href="/seasons/2">Season 2</a>
-            <a href="/seasons/3">Season 3</a>
-            <a href="/seasons/4">Season 4</a>
-          </div>
+      {/* Categories Dropdown */}
+      <div className="dropdown">
+        <Link to="/categories" className="nav-link">Categories</Link>
+        <div className="dropdown-content">
+          {categories.map((category, index) => (
+            <Link key={index} to={`/categories/${category.toLowerCase()}`} className="dropdown-item">
+              {category}
+            </Link>
+          ))}
         </div>
-
-        <a href="/popular" className="nav-link">Popular</a>
-        <a href="/investors" className="nav-link">Investors</a>
-        <a href="/more" className="nav-link">More</a>
-
-        {/* Categories Dropdown */}
-        <div className="category-dropdown">
-          <a href="#" className="nav-link">Categories</a>
-          <div className="dropdown-content">
-            {categories.length === 0 ? (
-              <p>Loading...</p>
-            ) : (
-              categories.map((category, index) => (
-                <a href={`/category/${category}`} key={index}>{category}</a>
-              ))
-            )}
-          </div>
-        </div>
-      </nav>
-
-      {/* Search bar (Placeholder only) */}
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search Products..."
-          disabled
-        />
-        <button disabled>
-          {/* Add search icon here if needed */}
-        </button>
       </div>
+
+      {/* Seasons Dropdown */}
+      <div className="dropdown">
+        <Link to="/seasons" className="nav-link">Seasons</Link>
+        <div className="dropdown-content">
+          <Link to="/seasons/1" className="dropdown-item">Season 1</Link>
+          <Link to="/seasons/2" className="dropdown-item">Season 2</Link>
+          <Link to="/seasons/3" className="dropdown-item">Season 3</Link>
+          <Link to="/seasons/4" className="dropdown-item">Season 4</Link>
+        </div>
+      </div>
+
+      <Link to="/popular" className="nav-link">Popular</Link>
+      <Link to="/investors" className="nav-link">Investors</Link>
+      <Link to="/more" className="nav-link">More</Link>
+    </div>
+
+      {/* Search Bar */}
+      <div className="search-bar">
+        <input type="text" placeholder="Search Products..." disabled />
+      </div>
+      </nav>
     </header>
   );
 };

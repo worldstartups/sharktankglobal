@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import investorsData from "../data/investors.json";  // Import the investors data from the correct path
 import "./InvestorsPage.css";  // Optional: Add styles for this page
+import Header from "../components/Header";  // ✅ Add Header component
 
 const InvestorsPage = () => {
   const [investors, setInvestors] = useState([]);
@@ -12,6 +13,7 @@ const InvestorsPage = () => {
 
   return (
     <div className="investor-page">
+      <Header /> {/* ✅ Add Header component */}
       <h1>Our Investors</h1>
 
       <div className="investor-list">
