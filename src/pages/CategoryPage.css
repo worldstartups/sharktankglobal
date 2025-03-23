@@ -1,0 +1,35 @@
+/* CategoryPage.css */
+.category-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-card a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.product-card a:hover {
+  text-decoration: underline;
+}

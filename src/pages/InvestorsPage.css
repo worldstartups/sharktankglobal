@@ -1,187 +1,36 @@
-/* Container */
-.investors-container {
+/* InvestorPage.css */
+.investor-page {
     padding: 20px;
     text-align: center;
-}
-
-/* Tabs Container */
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #555;
-    padding-bottom: 10px;
-    overflow-x: auto; /* Enables scrolling if tabs overflow */
-    white-space: nowrap;
-    scrollbar-width: none; /* Hide scrollbar */
-}
-
-/* Tabs Styling */
-.tab {
-    background: linear-gradient(to right, #444, #222);
-    border: none;
-    color: white;
-    padding: 12px 18px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 5px 5px 0 0;
-    position: relative;
-    flex-shrink: 0; /* Prevents shrinking */
-}
-
-/* Hover Effect - Disable on Mobile */
-@media (hover: hover) {
-    .tab:hover {
-        background: linear-gradient(to right, #666, #333);
-        transform: translateY(-2px);
-        box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-    }
-}
-
-/* Active Tab Styling */
-.tab.active {
-    background: linear-gradient(to right, #007bff, #0056b3);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.5);
-}
-
-/* Investors List */
-.investors-list {
+  }
+  
+  .investor-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
-}
-
-/* Investor Card */
-.investor-card {
-    flex: 1 1 calc(33.33% - 20px);
-    max-width: 280px;
-    background: #222;
+  }
+  
+  .investor-card {
+    width: 250px;
+    margin: 10px;
     padding: 20px;
-    border-radius: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
-    color: white;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .investor-card {
-        flex: 1 1 calc(50% - 20px);
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    .investor-card {
-        flex: 1 1 calc(50% - 10px);
-        max-width: 220px;
-    }
-
-    .investors-container {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .investor-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-        padding: 15px;
-    }
-}
-
-/* Hover Effects */
-@media (hover: hover) {
-    .investor-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-    }
-}
-
-/* Image */
-.investor-image-container {
-    position: relative;
-    display: block;
+  }
+  
+  .investor-card img {
     width: 100%;
     height: auto;
-}
-
-/* Adjust Image Size for Mobile */
-.investor-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid white;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Hide Hover Image on Mobile */
-@media (max-width: 480px) {
-    .investor-image-hover {
-        display: none; /* Hide hover image on mobile */
-    }
-}
-
-/* Disable Image Hover on Mobile */
-@media (hover: hover) {
-    .investor-card:hover .investor-image-default {
-        opacity: 0;
-    }
-
-    .investor-image-hover {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid white;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    .investor-card:hover .investor-image-hover {
-        opacity: 1;
-    }
-}
-
-/* Investor Info */
-.investor-info {
-    margin-top: 15px;
-    text-align: left;
-}
-
-.investor-info h3 {
-    margin: 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.investor-info p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-/* Website Link */
-.investor-website-link {
-    display: block;
-    margin-top: 10px;
-    color: #00aced;
+    margin-bottom: 10px;
+  }
+  
+  .investor-card a {
+    color: #007BFF;
     text-decoration: none;
-    font-weight: bold;
-}
-
-.investor-website-link:hover {
+  }
+  
+  .investor-card a:hover {
     text-decoration: underline;
-}
+  }
+  

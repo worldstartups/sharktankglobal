@@ -1,5 +1,4 @@
-{
-    "season1": [
+[
       {
         "name": "Aman Gupta",
         "company": "boAt",
@@ -7,7 +6,7 @@
         "born": "4 March 1982",
         "education": "MBA - Indian School of Business",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Aman.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amanhover.jpeg",
+       
         "websiteLink": "https://www.boat-lifestyle.com/"
       },
       {
@@ -17,7 +16,7 @@
         "born": "14 June 1982",
         "education": "IIT Delhi, IIM Ahmedabad",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Ashneer.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Ashneerhover.jpeg",
+       
         "websiteLink": "https://bharatpe.com/"
       },
       {
@@ -27,7 +26,7 @@
         "born": "23 December 1971",
         "education": "Boston College - MBA",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Anupam.jpg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Anupamhover.jpg",
+       
         "websiteLink": "https://www.shaadi.com/"
       },
       {
@@ -37,7 +36,7 @@
         "born": "21 March 1977",
         "education": "MBA - Duke University",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Namita.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Namitahover.jpeg",
+      
         "websiteLink": "https://www.emcure.com/"
       },
       {
@@ -47,7 +46,7 @@
         "born": "26 April 1985",
         "education": "McGill University, IIM Bangalore",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Peyush.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Peyushhover.jpeg",
+        
         "websiteLink": "https://www.lenskart.com/"
       },
       {
@@ -57,7 +56,7 @@
         "born": "1983",
         "education": "IIT Madras, IIM Ahmedabad",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Vineeta.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Vineetahover.jpeg",
+       
         "websiteLink": "https://in.sugarcosmetics.com/"
       },
       {
@@ -67,208 +66,10 @@
         "born": "2 September 1988",
         "education": "Punjab University",
         "image": "https://worldstartups.github.io/sharktankglobal/images/Ghazal.jpeg",
-        "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Ghazalhover.jpeg",
+       
         "websiteLink": "https://mamaearth.in/"
-      }
-    ],
-    
-        "season2": [
-          {
-            "name": "Aman Gupta",
-            "company": "boAt",
-            "designation": "Co-Founder & CMO",
-            "born": "4 March 1982",
-            "education": "MBA - Indian School of Business",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Aman.jpeg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amanhover.jpeg",
-            "websiteLink": "https://www.boat-lifestyle.com/"
-          },
-          {
-            "name": "Anupam Mittal",
-            "company": "Shaadi.com",
-            "designation": "Founder & CEO",
-            "born": "23 December 1971",
-            "education": "Boston College - MBA",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Anupam.jpg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Anupamhover.jpg",
-            "websiteLink": "https://www.shaadi.com/"
-          },
-          {
-            "name": "Namita Thapar",
-            "company": "Emcure Pharmaceuticals",
-            "designation": "Executive Director",
-            "born": "21 March 1977",
-            "education": "MBA - Duke University",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Namita.jpeg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Namitahover.jpeg",
-            "websiteLink": "https://www.emcure.com/"
-          },
-          {
-            "name": "Peyush Bansal",
-            "company": "Lenskart",
-            "designation": "Founder & CEO",
-            "born": "26 April 1985",
-            "education": "McGill University, IIM Bangalore",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Peyush.jpeg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Peyushhover.jpeg",
-            "websiteLink": "https://www.lenskart.com/"
-          },
-          {
-            "name": "Vineeta Singh",
-            "company": "Sugar Cosmetics",
-            "designation": "Co-Founder & CEO",
-            "born": "1983",
-            "education": "IIT Madras, IIM Ahmedabad",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Vineeta.jpeg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Vineetahover.jpeg",
-            "websiteLink": "https://in.sugarcosmetics.com/"
-          },
-          {
-            "name": "Amit Jain",
-            "company": "CarDekho",
-            "designation": "Co-Founder & CEO",
-            "born": "12 November 1977",
-            "education": "B.Tech - IIT Delhi",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/Amit.jpeg",
-            "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amithover.jpeg",
-            "websiteLink": "https://www.cardekho.com/"
-          }
-        ],
-        
-            "season3": [
-              {
-                "name": "Aman Gupta",
-                "company": "boAt",
-                "designation": "Co-Founder & CMO",
-                "born": "4 March 1982",
-                "education": "MBA - Indian School of Business",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Aman.jpeg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amanhover.jpeg",
-                "websiteLink": "https://www.boat-lifestyle.com/"
-              },
-              {
-                "name": "Anupam Mittal",
-                "company": "Shaadi.com",
-                "designation": "Founder & CEO",
-                "born": "23 December 1971",
-                "education": "Boston College - MBA",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Anupam.jpg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Anupamhover.jpg",
-                "websiteLink": "https://www.shaadi.com/"
-              },
-              {
-                "name": "Namita Thapar",
-                "company": "Emcure Pharmaceuticals",
-                "designation": "Executive Director",
-                "born": "21 March 1977",
-                "education": "MBA - Duke University",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Namita.jpeg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Namitahover.jpeg",
-                "websiteLink": "https://www.emcure.com/"
-              },
-              {
-                "name": "Peyush Bansal",
-                "company": "Lenskart",
-                "designation": "Founder & CEO",
-                "born": "26 April 1985",
-                "education": "McGill University, IIM Bangalore",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Peyush.jpeg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Peyushhover.jpeg",
-                "websiteLink": "https://www.lenskart.com/"
-              },
-              {
-                "name": "Vineeta Singh",
-                "company": "Sugar Cosmetics",
-                "designation": "Co-Founder & CEO",
-                "born": "1983",
-                "education": "IIT Madras, IIM Ahmedabad",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Vineeta.jpeg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Vineetahover.jpeg",
-                "websiteLink": "https://in.sugarcosmetics.com/"
-              },
-              {
-                "name": "Amit Jain",
-                "company": "CarDekho",
-                "designation": "Co-Founder & CEO",
-                "born": "12 November 1977",
-                "education": "B.Tech - IIT Delhi",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Amit.jpeg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amithover.jpeg",
-                "websiteLink": "https://www.cardekho.com/"
-              },
-              {
-                "name": "Ritesh Agarwal",
-                "company": "OYO Rooms",
-                "designation": "Founder & CEO",
-                "born": "16 November 1993",
-                "education": "College Dropout",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/Ritesh.jpg",
-                "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Riteshhover.jpg",
-                "websiteLink": "https://www.oyorooms.com/"
-              }
-            ],
-            
-                "season4": [
-                  {
-                    "name": "Aman Gupta",
-                    "company": "boAt",
-                    "designation": "Co-Founder & CMO",
-                    "born": "4 March 1982",
-                    "education": "MBA - Indian School of Business",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Aman.jpeg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amanhover.jpeg",
-                    "websiteLink": "https://www.boat-lifestyle.com/"
-                  },
-                  {
-                    "name": "Anupam Mittal",
-                    "company": "Shaadi.com",
-                    "designation": "Founder & CEO",
-                    "born": "23 December 1971",
-                    "education": "Boston College - MBA",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Anupam.jpg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Anupamhover.jpg",
-                    "websiteLink": "https://www.shaadi.com/"
-                  },
-                  {
-                    "name": "Namita Thapar",
-                    "company": "Emcure Pharmaceuticals",
-                    "designation": "Executive Director",
-                    "born": "21 March 1977",
-                    "education": "MBA - Duke University",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Namita.jpeg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Namitahover.jpeg",
-                    "websiteLink": "https://www.emcure.com/"
-                  },
-                  {
-                    "name": "Peyush Bansal",
-                    "company": "Lenskart",
-                    "designation": "Founder & CEO",
-                    "born": "26 April 1985",
-                    "education": "McGill University, IIM Bangalore",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Peyush.jpeg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Peyushhover.jpeg",
-                    "websiteLink": "https://www.lenskart.com/"
-                  },
-                  {
-                    "name": "Vineeta Singh",
-                    "company": "Sugar Cosmetics",
-                    "designation": "Co-Founder & CEO",
-                    "born": "1983",
-                    "education": "IIT Madras, IIM Ahmedabad",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Vineeta.jpeg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Vineetahover.jpeg",
-                    "websiteLink": "https://in.sugarcosmetics.com/"
-                  },
-                  {
-                    "name": "Amit Jain",
-                    "company": "CarDekho",
-                    "designation": "Co-Founder & CEO",
-                    "born": "12 November 1977",
-                    "education": "B.Tech - IIT Delhi",
-                    "image": "https://worldstartups.github.io/sharktankglobal/images/Amit.jpeg",
-                    "hoverImage": "https://worldstartups.github.io/sharktankglobal/images/Amithover.jpeg",
-                    "websiteLink": "https://www.cardekho.com/"
-                  },
+      },
+
                   {
                     "name": "Deepinder Goyal",
                     "company": "Zomato",
@@ -290,7 +91,7 @@
                     "websiteLink": "https://www.upgrad.com/"
                   }
                 ]
-              }
+              
               
           
           

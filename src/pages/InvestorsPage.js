@@ -1,92 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import investors from "../data/investors.json";
-import Header from "../components/Header"; // ✅ Import Header
-import "./InvestorsPage.css";
-import backgroundImage from '../assets/shark7.jpg'; // Static background image
+import investorsData from "../data/investors.json";  // Import the investors data from the correct path
+import "./InvestorsPage.css";  // Optional: Add styles for this page
 
 const InvestorsPage = () => {
-  const { season } = useParams(); // Get season from URL
-  const [selectedSeason, setSelectedSeason] = useState("season1"); // Default: Season 1
-  const [background, setBackground] = useState(""); // State for the background image
-  const seasonInvestors = investors[selectedSeason] || [];
+  const [investors, setInvestors] = useState([]);
 
   useEffect(() => {
-    const preloadImage = new Image();
-    preloadImage.src = backgroundImage; // Preload the background image
-    preloadImage.onload = () => {
-      setBackground(backgroundImage); // Once loaded, set the background
-    };
-  }, []); // Runs only once on component mount
+    // Fetch investors data (if you're using static data in the json)
+    setInvestors(investorsData);
+  }, []);
 
   return (
-    <div
-      className="investors-container"
-      style={{
-        backgroundImage: `url(${background})`, // Dynamically set the background image after it's loaded
-        backgroundSize: "cover", // Ensure the image covers the full screen
-        backgroundPosition: "center center", // Center the image
-        backgroundRepeat: "no-repeat", // Prevent image repetition
-        minHeight: "100vh", // Full viewport height (minHeight to ensure it covers even with content)
-        width: "100%", // Full width
-        position: "relative", 
-      }}
-    >
-      <Header /> {/* ✅ Add the Header component */}
-      <div className="investors-content">
-        <h1>Shark Tank India - Investors</h1>
+    <div className="investor-page">
+      <h1>Our Investors</h1>
 
-        <div className="tabs-container">
-          <div className="tabs">
-            {Object.keys(investors).map((seasonKey) => (
-              <button
-                key={seasonKey}
-                className={`tab ${selectedSeason === seasonKey ? "active" : ""}`}
-                onClick={() => setSelectedSeason(seasonKey)}
-              >
-                {seasonKey.replace("season", "Season ")}
-              </button>
-            ))}
+      <div className="investor-list">
+        {investors.length === 0 ? (
+          <p>No investors found.</p>
+        ) : (
+          investors.map((investor, index) => (
+            <div className="investor-card" key={index}>
+            <img src={investor.image} alt={investor.name} />
+            <h2>{investor.name}</h2>
+            <p><strong>Company:</strong> {investor.company}</p>
+            <p><strong>Designation:</strong> {investor.designation}</p>
+            <p><strong>Born:</strong> {investor.born}</p>
+            <p><strong>Education:</strong> {investor.education}</p>
+            <a href={investor.websiteLink} target="_blank" rel="noopener noreferrer">Visit Profile</a>
           </div>
-        </div>
-
-        {/* Investors List */}
-        <div className="investors-list">
-          {seasonInvestors.map((investor, index) => (
-            <div key={index} className="investor-card">
-              <div className="investor-image-container">
-                <img
-                  src={investor.image}
-                  alt={investor.name}
-                  className="investor-image investor-image-default"
-                />
-                <img
-                  src={investor.hoverImage}
-                  alt={investor.name}
-                  className="investor-image investor-image-hover"
-                />
-              </div>
-              <div className="investor-info">
-                <h3>{investor.name}</h3>
-                <p><strong>Company:</strong> {investor.company}</p>
-                <p><strong>Designation:</strong> {investor.designation}</p>
-                <p><strong>Born:</strong> {investor.born}</p>
-                <p><strong>Education:</strong> {investor.education}</p>
-                <a
-                  href={investor.websiteLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="investor-website-link"
-                >
-                  Visit Website
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-        <footer style={{ marginTop: 'auto', textAlign: 'center' }}>
-        <p>&copy; 2025 Shark Tank Global | Made in INDIA ❤️</p>
-      </footer>
+          ))
+        )}
       </div>
     </div>
   );
