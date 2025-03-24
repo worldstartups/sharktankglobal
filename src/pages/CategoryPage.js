@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import seasonsData from "./SeasonsProducts.json"; 
 import Header from "../components/Header";
 import "./CategoryPage.css";
-import { FaShoppingCart } from "react-icons/fa"; 
+import { FaEye } from "react-icons/fa"; 
 
 const CategoryPage = () => {
   const { categoryName } = useParams(); 
@@ -36,15 +36,19 @@ const CategoryPage = () => {
           <p>No products found in this category.</p>
         ) : (
           products.map((product) => (
-            <div className="product-card" key={product.id}>
-              <img src={`/images/${product.image}`} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <p><strong>Category:</strong> {product.category}</p>
-              <Link to={`/product/${product.id}`} className="buy-button">
-                <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
-              </Link>
-            </div>
+            <Link to={`/product/${product.id}`} key={product.id} className="product-card-link">
+              <div className="product-card">
+                <img src={`/images/${product.image}`} alt={product.name} />
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
+                <p><strong>Category:</strong> {product.category}</p>
+
+                {/* View Button */}
+                <div className="view-button">
+                  <FaEye style={{ marginRight: "5px" }} /> View
+                </div>
+              </div>
+            </Link>
           ))
         )}
       </div>

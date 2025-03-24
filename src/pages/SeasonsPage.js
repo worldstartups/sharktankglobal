@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 import './SeasonsPage.css'; 
 import seasonsData from './SeasonsProducts.json'; 
 import Header from "../components/Header"; 
-import { FaShoppingCart } from "react-icons/fa"; 
+import { FaEye, FaMehRollingEyes, FaVoteYea } from "react-icons/fa"; 
+import { FaEyeDropper, FaMoneyCheckDollar } from 'react-icons/fa6';
 
 const SeasonsPage = () => {
   const [products, setProducts] = useState([]);
@@ -51,7 +52,6 @@ const SeasonsPage = () => {
 
       {/* Wrapper for the Seasons and Episodes dropdowns */}
       <div className="tabs-container">
-        {/* Seasons Dropdown */}
         <div className="seasons-dropdown">
           <select id="season-select" value={selectedSeason} onChange={handleSeasonChange}>
             <option value="All">All Seasons</option>
@@ -63,7 +63,6 @@ const SeasonsPage = () => {
           </select>
         </div>
 
-        {/* Episodes Dropdown (only shows for selected season) */}
         {selectedSeason !== "All" && (
           <div className="episodes-dropdown">
             <select id="episode-select" value={selectedEpisode} onChange={handleEpisodeChange}>
@@ -84,19 +83,21 @@ const SeasonsPage = () => {
           <p>No products found for this season or episode.</p>
         ) : (
           products.filter(product => selectedEpisode === "All" || product.episode === selectedEpisode).map((product) => (
-            <div className="product-card" key={product.id}>
-              <img src={`/images/${product.image}`} alt={product.name} />
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <p><strong>Category:</strong> {product.category}</p>
-              <p><strong>Investors:</strong> {product.investors}</p>
-              <p><strong>Valuation:</strong> ${product.valuation.toLocaleString()}</p>
-              
-                 {/* ✅ Updated "Buy" button to navigate to ProductPage */}
-                             <Link to={`/product/${product.id}`} className="buy-button">
-                                           <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
-                                         </Link>
-            </div>
+            <Link to={`/product/${product.id}`} key={product.id} className="product-card">
+              <div className="product-card-content">
+                <img src={`/images/${product.image}`} alt={product.name} />
+                <h2>{product.name}</h2>
+                <p>{product.description}</p>
+                <p><strong>Category:</strong> {product.category}</p>
+                <p><strong>Investors:</strong> {product.investors}</p>
+                <p><strong>Valuation:</strong> ${product.valuation.toLocaleString()}</p>
+                
+                {/* View Button */}
+                <button className="view-button">
+                  <FaEye style={{ marginRight: "5px" }} /> View
+                </button>
+              </div>
+            </Link>
           ))
         )}
       </div>

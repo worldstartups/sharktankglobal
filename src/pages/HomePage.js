@@ -48,15 +48,23 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <Header />
-
+       {/* ✅ Welcome Message Section */}
+    <section className="welcome-section">
+      <h1> Welcome to the Shark Tank India Fan Website! </h1>
+      <p>
+        Discover innovative products, inspiring entrepreneurs, and legendary 
+        investors from Shark Tank India. Explore the best products pitched 
+        on the show and support your favorite startups!
+      </p>
+    </section>
       {/* Hero Section */}
       <section className="hero">
-        <h2>Explore Shark Tank India Products!</h2>
+        
       </section>
 
-      {/* 🔥 EDITORS Products Carousel */}
+      {/*  EDITORS Products Carousel */}
       <section className="featured-carousel">
-      <h2>🔥 EDITOR'S PICK</h2>
+      <h2> EDITOR'S PICK</h2>
       <div className="carousel-container">
         <button className="carousel-btn left" onClick={prevEditorSlide}>
           &#10094;
@@ -88,9 +96,9 @@ const HomePage = () => {
       </div>
     </section>
 
-      {/* 🔥 Featured Products Carousel */}
+      {/*  Featured Products Carousel */}
       <section className="featured-carousel">
-        <h2>🔥 Featured Products</h2>
+        <h2> Featured Products</h2>
         <div className="carousel-container">
           <button className="carousel-btn left" onClick={prevSlide}>&#10094;</button>
           
@@ -111,9 +119,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 🚀 Trending Products */}
+      {/*  Trending Products */}
       <section className="product-section">
-        <h2>🚀 Trending Products</h2>
+        <h2> Trending Products</h2>
         <div className="product-container">
           {trendingProducts.map((product) => (
             <div key={product.id} className="product-card">
@@ -128,9 +136,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* 🏆 Most Bought Products */}
+      {/*  Most Bought Products */}
       <section className="product-section">
-        <h2>🏆 Most Purchased Products</h2>
+        <h2> Most Purchased Products</h2>
         <div className="product-container">
           {mostBoughtProducts.map((product) => (
             <div key={product.id} className="product-card">

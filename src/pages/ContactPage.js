@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import emailjs from "@emailjs/browser";
 import "./ContactPage.css";
 
-const ContactPage = ({ onClose }) => {
+const ContactPage = () => { // ✅ Removed `onClose` since it's unnecessary now
   const navigate = useNavigate(); // ✅ Initialize navigation
   const [formData, setFormData] = useState({
     name: "",
@@ -40,11 +40,7 @@ const ContactPage = ({ onClose }) => {
   };
 
   const handleClose = () => {
-    if (submitted) {
-      navigate("/"); // ✅ Navigate to home page after submission
-    } else if (onClose) {
-      onClose(); // ✅ Close the popup normally if form not submitted
-    }
+    navigate("/"); // ✅ Always navigate to home page on close
   };
 
   return (
@@ -54,7 +50,6 @@ const ContactPage = ({ onClose }) => {
         {submitted ? (
           <>
             <h2>Thanks for contacting us! We will get back to you soon.</h2>
-            
           </>
         ) : (
           <form onSubmit={handleSubmit}>
