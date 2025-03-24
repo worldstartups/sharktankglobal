@@ -1,0 +1,40 @@
+.product-container {
+    display: flex;
+    gap: 20px;
+    padding: 60px;
+    
+  }
+  
+  .product-image {
+    width: 300px;
+    border-radius: 10px;
+  }
+  
+  .product-details {
+    max-width: 600px;
+  }
+  
+  .product-details h1 {
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    margin: 5px 0;
+  }
+  .buy-now-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #ff9900; /* Amazon-like orange color */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .buy-now-button:hover {
+    background-color: #e68a00;
+  }
+  

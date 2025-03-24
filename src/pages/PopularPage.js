@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import popularData from "./PopularProducts.json"; // Import the JSON file
-import "./PopularPage.css"; // Add styles
+import "./PopularPage.css"; 
 import Header from "../components/Header";
 
 const PopularPage = () => {
@@ -13,7 +14,7 @@ const PopularPage = () => {
 
   return (
     <div className="popular-page">
-        <Header /> {/* ✅ Add Header component */}
+      <Header /> {/* ✅ Add Header component */}
       <h1>Popular Products</h1>
       <div className="product-list">
         {popularProducts.length === 0 ? (
@@ -21,13 +22,15 @@ const PopularPage = () => {
         ) : (
           popularProducts.map((product) => (
             <div className="product-card" key={product.id}>
-              <img src={product.image} alt={product.name} />
+              <img src={`/images/${product.image}`} alt={product.name} />
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p><strong>Category:</strong> {product.category}</p>
-              <a href={product.website} target="_blank" rel="noopener noreferrer">
-                Visit Product
-              </a>
+              
+              {/* ✅ Updated "Buy" button to navigate to ProductPage */}
+              <Link to={`/product/${product.id}`} className="buy-button">
+               Buy
+              </Link>
             </div>
           ))
         )}

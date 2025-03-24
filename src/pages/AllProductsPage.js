@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import seasonsData from "./SeasonsProducts.json"; // Import products data
-import "./AllProductsPage.css"; // Add styles
+import { Link } from "react-router-dom"; // Import Link for navigation
+import seasonsData from "./SeasonsProducts.json";
+import "./AllProductsPage.css"; 
 import Header from "../components/Header";
 
 const AllProductsPage = () => {
@@ -18,7 +19,7 @@ const AllProductsPage = () => {
 
   return (
     <div className="all-products-page">
-        <Header /> {/* ✅ Add Header component */}
+      <Header /> {/* ✅ Add Header component */}
       <h1>All Products</h1>
       <div className="product-list">
         {allProducts.length === 0 ? (
@@ -26,13 +27,15 @@ const AllProductsPage = () => {
         ) : (
           allProducts.map((product) => (
             <div className="product-card" key={product.id}>
-              <img src={product.image} alt={product.name} />
+              <img src={`/images/${product.image}`} alt={product.name} />
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p><strong>Category:</strong> {product.category}</p>
-              <a href={product.website} target="_blank" rel="noopener noreferrer">
-                Visit Product
-              </a>
+              
+              {/* ✅ Updated "Buy" button to navigate to ProductPage */}
+              <Link to={`/product/${product.id}`} className="buy-button">
+                Buy
+              </Link>
             </div>
           ))
         )}
