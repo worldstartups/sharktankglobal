@@ -1,0 +1,22 @@
+.ads-section {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+  }
+  
+  .offers-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  .offer-card {
+    background: #ff6b6b;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+  }
+  

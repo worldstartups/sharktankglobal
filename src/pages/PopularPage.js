@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // Import Link for navigation
 import popularData from "./PopularProducts.json"; // Import the JSON file
 import "./PopularPage.css"; 
 import Header from "../components/Header";
+import { FaShoppingCart } from "react-icons/fa"; 
 
 const PopularPage = () => {
   const [popularProducts, setPopularProducts] = useState([]);
@@ -28,9 +29,9 @@ const PopularPage = () => {
               <p><strong>Category:</strong> {product.category}</p>
               
               {/* ✅ Updated "Buy" button to navigate to ProductPage */}
-              <Link to={`/product/${product.id}`} className="buy-button">
-               Buy
-              </Link>
+               <Link to={`/product/${product.id}`} className="buy-button">
+                             <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
+                           </Link>
             </div>
           ))
         )}

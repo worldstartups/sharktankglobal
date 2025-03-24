@@ -1,40 +1,60 @@
+/* Make the product container behave like an article */
 .product-container {
-    display: flex;
-    gap: 20px;
-    padding: 60px;
-    
-  }
-  
-  .product-image {
-    width: 300px;
-    border-radius: 10px;
-  }
-  
-  .product-details {
-    max-width: 600px;
-  }
-  
-  .product-details h1 {
-    margin-bottom: 10px;
-  }
-  
-  .product-details p {
-    margin: 5px 0;
-  }
-  .buy-now-button {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
-    background-color: #ff9900; /* Amazon-like orange color */
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
-  
-  .buy-now-button:hover {
-    background-color: #e68a00;
-  }
-  
+  max-width: 800px; /* Centered readable width */
+  margin: 100px auto; /* Center the article with space from header */
+  padding: 20px;
+  background: #ffffff; /* Clean white background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  line-height: 1.6; /* Better readability */
+  font-family: 'Georgia', serif; /* Classic article font */
+}
+
+/* Product image styling */
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Improve text layout */
+.product-details h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.product-details p {
+  font-size: 18px;
+  color: #555;
+  margin: 8px 0;
+}
+
+/* Style strong elements (labels) */
+.product-details strong {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Style the Buy Now button */
+.buy-now-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f06322; /* Highlighted button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.buy-now-button:hover {
+  background-color: #f38c37;
+}

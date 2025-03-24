@@ -1,32 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom"; // Import Link for navigation
-import seasonsData from "./SeasonsProducts.json"; // Import products data
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import seasonsData from "./SeasonsProducts.json"; 
 import Header from "../components/Header";
 import "./CategoryPage.css";
+import { FaShoppingCart } from "react-icons/fa"; 
 
 const CategoryPage = () => {
-  const { categoryName } = useParams(); // Get the category name from the URL
+  const { categoryName } = useParams(); 
   const [products, setProducts] = useState([]);
 
-  // Fetch products from SeasonsProducts.json based on category
   useEffect(() => {
-    const filteredProducts = [];
-    Object.values(seasonsData).forEach((season) => {
-      season.forEach((product) => {
-        if (product.category.toLowerCase() === categoryName.toLowerCase()) {
-          filteredProducts.push(product);
-        }
-      });
-    });
-    setProducts(filteredProducts);
-  }, [categoryName]);
+    console.log("Category changed to:", categoryName); // Debugging log
+
+    // ✅ Reset products before updating
+    setProducts([]);
+
+    // ✅ Fetch only products of the selected category
+    const filteredProducts = Object.values(seasonsData)
+      .flatMap((season) => season)
+      .filter((product) => product.category.toLowerCase() === categoryName.toLowerCase());
+
+    console.log("Filtered products:", filteredProducts); // Debugging log
+
+    setProducts(filteredProducts); // ✅ Update state properly
+
+  }, [categoryName]); // ✅ Runs every time category changes
 
   return (
     <div className="category-page">
       <Header />
-      <h1>{categoryName.replace(/\b\w/g, char => char.toUpperCase())}</h1>
+      <h1>{categoryName.replace(/\b\w/g, (char) => char.toUpperCase())}</h1>
 
-      
       <div className="product-list">
         {products.length === 0 ? (
           <p>No products found in this category.</p>
@@ -37,10 +41,8 @@ const CategoryPage = () => {
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p><strong>Category:</strong> {product.category}</p>
-              
-              {/* ✅ Updated "Buy" button to navigate to ProductPage */}
               <Link to={`/product/${product.id}`} className="buy-button">
-                Buy
+                <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
               </Link>
             </div>
           ))

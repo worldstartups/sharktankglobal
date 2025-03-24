@@ -33,3 +33,22 @@
 .product-card a:hover {
   text-decoration: underline;
 }
+.buy-button {
+  display: inline-block;
+  padding: 8px 12px;
+  align-items: center; /* ✅ Align icon & text */
+  gap: 5px; /* ✅ Add spacing between icon & text */
+  align-items: center; /* ✅ Align icon & text */
+  color: rgb(243, 104, 39) !important; /* ✅ Force text color */
+  text-decoration: none !important; /* ✅ Remove underline */
+ /* ✅ Keep border */
+  border-radius: 5px !important;
+  font-weight: bold !important;
+  transition: all 0.3s ease !important;
+  background: transparent !important; /* ✅ Remove blue background forcefully */
+}
+
+.buy-button:hover {
+   /* ✅ Add black background on hover */
+  color: rgb(17, 49, 231) !important; /* ✅ Change text to white on hover */
+}

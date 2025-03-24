@@ -1,87 +1,184 @@
-.home-page{
+/* 🏗 Section General Styling */
+.product-section, 
+.discounts-offers, 
+.featured-carousel {
   text-align: center;
-  padding: 60px;
+  padding: 20px 0; /* Reduce padding to tighten layout */
+  background: #fff;
+  margin-bottom: 30px; /* Reduce space between sections */
 }
-  
-  /* Navigation Styles */
-  .home-nav {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .nav-link {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-    border-radius: 5px;
-  }
-  
-  .nav-link:hover {
-    background-color: #34495e;
-    color: white;
-  }
-  
-  /* Dropdown Styles */
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown-item {
-    padding: 12px 16px;
-    color: #333;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #34495e;
-    color: white;
-  }
-  
-  /* Other Styles */
-  .hero {
-    text-align: center;
-    margin-top: 100px;
-  }
-  
-  .featured-section {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-  }
-  
-  .featured-show {
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .featured-show:hover {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 1rem;
-    color: #555;
-  }
-  
+
+/* 📌 Product Container */
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Reduce gap between cards */
+  flex-wrap: wrap;
+  padding: 10px; /* Reduce overall padding */
+}
+
+/* 🎴 Product Card */
+.product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 15px; /* Reduced padding */
+  width: 260px; /* Adjusted width for better alignment */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px; /* Reduce space below each card */
+}
+
+/* 🏷️ Product Name */
+.product-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px; /* Reduce margin */
+}
+
+/* 📄 Description */
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px; /* Reduce spacing */
+}
+
+/* 🛒 Buy Now Button */
+.product-card button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* 🎁 Discounts & Offers Section */
+.discounts-offers {
+  background: #f8f9fa;
+  padding: 20px 0; /* Reduce padding */
+}
+
+.offers-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Reduce spacing */
+}
+
+.offer-card {
+  background: #ffc107;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  width: 240px; /* Reduce size */
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: scale(1.03);
+}
+
+.offer-card h3 {
+  font-size: 1.2rem;
+}
+
+.offer-card p {
+  font-size: 0.95rem;
+}
+
+/* 🔄 Featured Section (Carousel) */
+.featured-carousel {
+  padding: 20px 0; /* Reduce extra space */
+}
+
+.carousel-container {
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  background: white;
+  padding: 15px; /* Reduce padding */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 🎯 Carousel Navigation Buttons */
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 12px; /* Reduce size */
+  cursor: pointer;
+  font-size: 1.8rem; /* Adjust font size */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.05);
+}
+
+/* 📌 Featured & Editor's Pick Card */
+.featured-card, .trending-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.featured-card img, .trending-card img {
+  width: 100%;
+  max-width: 220px; /* Reduce image size */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.featured-card img:hover, .trending-card img:hover {
+  transform: scale(1.05);
+}
+
+.featured-card button, .trending-card button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.featured-card button:hover, .trending-card button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
