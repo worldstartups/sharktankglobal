@@ -9,7 +9,6 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // 🔹 Added for mobile menu
 
   // Fetch categories from JSON
   useEffect(() => {
@@ -40,51 +39,50 @@ const Header = () => {
     };
   }, []);
 
-  // 🔹 Search Functionality (Fixed)
-  useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setSearchResults([]);
-      return;
-    }
+  // **🔹 Search Functionality (Fixed)**
+ // 🔹 Search Functionality (Updated)
+useEffect(() => {
+  if (searchQuery.trim() === "") {
+    setSearchResults([]);
+    return;
+  }
 
-    const productMap = new Map();
-    Object.values(seasonsData).forEach((season) => {
-      season.forEach((product) => {
-        if (
-          product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          !productMap.has(product.id) // Prevent duplicate IDs
-        ) {
-          productMap.set(product.id, product);
-        }
-      });
+  // Using a Map to store unique products (by id)
+  const productMap = new Map();
+
+  Object.values(seasonsData).forEach((season) => {
+    season.forEach((product) => {
+      if (
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        !productMap.has(product.id) // 🔹 Prevent duplicate IDs
+      ) {
+        productMap.set(product.id, product);
+      }
     });
+  });
 
-    setSearchResults([...productMap.values()]);
-  }, [searchQuery]);
+  // Convert Map values back to an array
+  setSearchResults([...productMap.values()]);
+
+  console.log("Filtered Products:", [...productMap.values()]);
+}, [searchQuery]);
 
   return (
     <header className="header">
       {/* Logo */}
       <div className="logo" onClick={() => navigate("/")}>
-        Shark Tank India
+        {/* Add logo if needed */}
       </div>
 
-      {/* 🔹 Hamburger Menu for Mobile */}
-      <div className="hamburger" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-
-      {/* 🔹 Desktop Navigation */}
-      <nav className={`nav-container ${mobileMenuOpen ? "mobile-nav" : ""}`}>
+      {/* Navigation */}
+      <nav className="nav-container">
         <div className="nav-links">
-          <Link to="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-          <Link to="/allproducts" className="nav-link" onClick={() => setMobileMenuOpen(false)}>All Products</Link>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/allproducts" className="nav-link">All Products</Link>
 
           {/* Categories Dropdown */}
           <div 
-            className="dropdown"
+            className="dropdown" 
             onMouseEnter={() => setDropdownOpen(true)} 
             onMouseLeave={() => setDropdownOpen(false)}
             onClick={toggleDropdown}
@@ -99,13 +97,14 @@ const Header = () => {
             </div>
           </div>
 
-          <Link to="/seasons" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Seasons</Link>
-          <Link to="/popular" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Popular</Link>
-          <Link to="/investors" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Investors</Link>
-          <Link to="/more" className="nav-link" onClick={() => setMobileMenuOpen(false)}>More</Link>
+          {/* Seasons Link */}
+          <Link to="/seasons" className="nav-link">Seasons</Link>
+          <Link to="/popular" className="nav-link">Popular</Link>
+          <Link to="/investors" className="nav-link">Investors</Link>
+          <Link to="/more" className="nav-link">More</Link>
         </div>
 
-        {/* 🔹 Search Bar */}
+        {/* 🔹 Search Bar (Fixed) */}
         <div className="search-container">
           <input 
             type="text" 
@@ -122,7 +121,7 @@ const Header = () => {
                   key={product.id} 
                   to={`/product/${product.id}`} 
                   className="search-item"
-                  onClick={() => setSearchQuery("")}
+                  onClick={() => setSearchQuery("")} // Clear search on click
                 >
                   {product.name}
                 </Link>
@@ -136,3 +135,4 @@ const Header = () => {
 };
 
 export default Header;
+
