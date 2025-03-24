@@ -1,5 +1,5 @@
 {
-    "popular": [
+    "editorspick": [
       {
         "id": 1,
         "name": "Product 1",
@@ -25,6 +25,5 @@
         "website": "https://example.com"
       }
     ]
-    
   }
   

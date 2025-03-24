@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // Import Link for navigation
 import seasonsData from "./SeasonsProducts.json";
 import "./AllProductsPage.css"; 
 import Header from "../components/Header";
+import { FaShoppingCart } from "react-icons/fa"; 
 
 const AllProductsPage = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -33,8 +34,8 @@ const AllProductsPage = () => {
               <p><strong>Category:</strong> {product.category}</p>
               
               {/* ✅ Updated "Buy" button to navigate to ProductPage */}
-              <Link to={`/product/${product.id}`} className="buy-button">
-                Buy
+                          <Link to={`/product/${product.id}`} className="buy-button">
+                <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
               </Link>
             </div>
           ))

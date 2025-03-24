@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // Import Link for navigation
 import './SeasonsPage.css'; 
 import seasonsData from './SeasonsProducts.json'; 
 import Header from "../components/Header"; 
+import { FaShoppingCart } from "react-icons/fa"; 
 
 const SeasonsPage = () => {
   const [products, setProducts] = useState([]);
@@ -91,10 +92,10 @@ const SeasonsPage = () => {
               <p><strong>Investors:</strong> {product.investors}</p>
               <p><strong>Valuation:</strong> ${product.valuation.toLocaleString()}</p>
               
-              {/* ✅ Updated "Buy" button to navigate to ProductPage */}
-              <Link to={`/product/${product.id}`} className="buy-button">
-                Buy
-              </Link>
+                 {/* ✅ Updated "Buy" button to navigate to ProductPage */}
+                             <Link to={`/product/${product.id}`} className="buy-button">
+                                           <FaShoppingCart style={{ marginRight: "5px" }} /> Buy
+                                         </Link>
             </div>
           ))
         )}

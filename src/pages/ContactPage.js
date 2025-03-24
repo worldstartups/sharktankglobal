@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import "./ContactPage.css"; // Import CSS for styling
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import emailjs from "@emailjs/browser";
+import "./ContactPage.css";
 
 const ContactPage = ({ onClose }) => {
+  const navigate = useNavigate(); // ✅ Initialize navigation
   const [formData, setFormData] = useState({
     name: "",
     country: "",
     contact: "",
     email: "",
-    queries: ""
+    queries: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,18 +20,42 @@ const ContactPage = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      onClose(); // Close the popup after 2 seconds
-    }, 2000);
+
+    emailjs
+      .send(
+        "sharktankindia",
+        "template_l45mrmo",
+        formData,
+        "yjzrT5cMij8f0HpL6"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setSubmitted(true);
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+  };
+
+  const handleClose = () => {
+    if (submitted) {
+      navigate("/"); // ✅ Navigate to home page after submission
+    } else if (onClose) {
+      onClose(); // ✅ Close the popup normally if form not submitted
+    }
   };
 
   return (
     <div className="contact-overlay">
       <div className="contact-popup">
-        <button className="close-btn" onClick={onClose}>&times;</button>
+        <button className="close-btn" onClick={handleClose}>&times;</button>
         {submitted ? (
-          <h2>Thanks for contacting us! We will get back to you soon.</h2>
+          <>
+            <h2>Thanks for contacting us! We will get back to you soon.</h2>
+            
+          </>
         ) : (
           <form onSubmit={handleSubmit}>
             <h2>Contact Us</h2>

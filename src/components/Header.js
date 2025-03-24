@@ -101,6 +101,7 @@ useEffect(() => {
           <Link to="/seasons" className="nav-link">Seasons</Link>
           <Link to="/popular" className="nav-link">Popular</Link>
           <Link to="/investors" className="nav-link">Investors</Link>
+          <Link to="/Contact" className="nav-link">Contact</Link>
           <Link to="/more" className="nav-link">More</Link>
         </div>
 
