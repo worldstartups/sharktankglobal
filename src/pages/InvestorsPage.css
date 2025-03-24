@@ -1,36 +1,71 @@
-/* InvestorPage.css */
 .investor-page {
-    padding: 60px;
-    text-align: center;
-  }
-  
-  .investor-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .investor-card {
-    width: 250px;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .investor-card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .investor-card a {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  
-  .investor-card a:hover {
-    text-decoration: underline;
-  }
-  
+  text-align: center;
+  padding: 80px;
+  background-color: #f8f9fa;
+}
+
+.investor-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.investor-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.investor-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.investor-card h2 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.investor-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+.show-more-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.show-more-btn:hover {
+  background: #0056b3;
+}
+
+.investor-card a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.investor-card a:hover {
+  text-decoration: underline;
+}

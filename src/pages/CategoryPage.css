@@ -8,31 +8,28 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 4px; /* ✅ Adds space between cards */
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .product-card {
-  width: 200px;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  width: 250px; /* ✅ Set a fixed width */
+  margin: 10px; /* ✅ Adds spacing between cards */
 }
 
-.product-card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+.product-card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.product-card a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-.product-card a:hover {
-  text-decoration: underline;
-}
 .buy-button {
   display: inline-block;
   padding: 8px 12px;
