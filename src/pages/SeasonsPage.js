@@ -48,7 +48,7 @@ const SeasonsPage = () => {
     <div className="season-page">
       <Header />
 
-      <h1>{selectedSeason === "All" ? "All Seasons" : `Season ${selectedSeason} Products`}</h1>
+      {/*<h1>{selectedSeason === "All" ? "All Seasons" : `Season ${selectedSeason} Products`}</h1>*/}
 
       {/* Wrapper for the Seasons and Episodes dropdowns */}
       <div className="tabs-container">

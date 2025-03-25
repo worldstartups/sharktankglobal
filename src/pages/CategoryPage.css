@@ -49,3 +49,35 @@
    /* ✅ Add black background on hover */
   color: rgb(17, 49, 231) !important; /* ✅ Change text to white on hover */
 }
+/* 🎯 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 30px 10px; /* Reduce padding for better spacing */
+  }
+
+  .product-list {
+    gap: 6px; /* Reduce gap for compact layout */
+    justify-content: center; /* Ensures perfect alignment */
+  }
+
+  .product-card {
+    width: 95%; /* Allow cards to take full width */
+    max-width: 220px; /* Keep them consistent */
+    padding: 10px; /* Reduce padding for compact look */
+    margin: 6px auto; /* Center cards properly */
+  }
+
+  .product-card h3 {
+    font-size: 1rem; /* Adjust title size */
+  }
+
+  .product-card p {
+    font-size: 0.85rem; /* Adjust text size */
+  }
+
+  /* 🎯 Buy Button Adjustments */
+  .buy-button {
+    padding: 6px 10px; /* Reduce padding for mobile */
+    font-size: 0.9rem; /* Adjust text size */
+  }
+}

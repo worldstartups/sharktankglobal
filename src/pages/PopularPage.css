@@ -28,4 +28,23 @@
   .product-card:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
-  
+  /* 🎯 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .popular-page {
+    padding: 40px 20px; /* Reduce padding for better spacing */
+  }
+
+  .product-list {
+    gap: 8px; /* Slightly adjust spacing */
+  }
+
+  .product-card {
+    width: 90%; /* Ensure cards fit properly on mobile */
+    padding: 12px; /* Reduce padding */
+    margin: 8px 0; /* Adjust margin for better spacing */
+  }
+
+  .product-card h3 {
+    font-size: 16px; /* Adjust text size for readability */
+  }
+}

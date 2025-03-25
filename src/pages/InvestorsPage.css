@@ -69,3 +69,35 @@
 .investor-card a:hover {
   text-decoration: underline;
 }
+/* 🎯 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .investor-page {
+    padding: 40px 20px; /* Reduce padding for better spacing */
+  }
+
+  .investor-list {
+    gap: 10px; /* Reduce gap between investor cards */
+  }
+
+  .investor-card {
+    width: 90%; /* Make cards fit better on small screens */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .investor-image {
+    height: 180px; /* Adjust image size for better fit */
+  }
+
+  .investor-card h2 {
+    font-size: 18px; /* Reduce title size slightly */
+  }
+
+  .investor-card p {
+    font-size: 14px; /* Adjust text for readability */
+  }
+
+  .show-more-btn {
+    font-size: 14px; /* Adjust button text size */
+    padding: 7px 10px; /* Adjust button size */
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import seasonsData from "../pages/SeasonsProducts.json"; 
+import seasonsData from "../pages/SeasonsProducts.json";
 import "../components/Header.css";
 
 const Header = () => {
@@ -9,6 +9,7 @@ const Header = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Fetch categories from JSON
   useEffect(() => {
@@ -39,54 +40,89 @@ const Header = () => {
     };
   }, []);
 
-  // **🔹 Search Functionality (Fixed)**
- // 🔹 Search Functionality (Updated)
-useEffect(() => {
-  if (searchQuery.trim() === "") {
-    setSearchResults([]);
-    return;
-  }
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
-  // Using a Map to store unique products (by id)
-  const productMap = new Map();
+  // 🔹 Search Functionality
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+      return;
+    }
 
-  Object.values(seasonsData).forEach((season) => {
-    season.forEach((product) => {
-      if (
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        !productMap.has(product.id) // 🔹 Prevent duplicate IDs
-      ) {
-        productMap.set(product.id, product);
-      }
+    const productMap = new Map();
+
+    Object.values(seasonsData).forEach((season) => {
+      season.forEach((product) => {
+        if (
+          product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          !productMap.has(product.id)
+        ) {
+          productMap.set(product.id, product);
+        }
+      });
     });
-  });
 
-  // Convert Map values back to an array
-  setSearchResults([...productMap.values()]);
-
-  console.log("Filtered Products:", [...productMap.values()]);
-}, [searchQuery]);
+    setSearchResults([...productMap.values()]);
+  }, [searchQuery]);
 
   return (
     <header className="header">
-      {/* Logo */}
-      <div className="logo" onClick={() => navigate("/")}>
-        {/* Add logo if needed */}
+      {/* 🔹 Hamburger for Mobile */}
+      <button className="hamburger" onClick={toggleMobileMenu}>
+        ☰
+      </button>
+
+      {/* 🔹 Mobile Menu (Hidden by default) */}
+      <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
+        {/* 🔹 Search inside Mobile Menu */}
+        <div className="mobile-search-container">
+          <input 
+            type="text" 
+            placeholder="Search Products..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          
+          {/* 🔹 Search Results in Mobile Menu */}
+          {searchResults.length > 0 && (
+            <div className="search-results">
+              {searchResults.map((product) => (
+                <Link 
+                  key={product.id} 
+                  to={`/product/${product.id}`} 
+                  className="search-item"
+                  onClick={() => {
+                    setSearchQuery("");
+                    setMobileMenuOpen(false); // Close menu on selection
+                  }}
+                >
+                  {product.name}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <Link to="/" className="nav-link" onClick={toggleMobileMenu}>Home</Link>
+        <Link to="/allproducts" className="nav-link" onClick={toggleMobileMenu}>All Products</Link>
+        <Link to="/seasons" className="nav-link" onClick={toggleMobileMenu}>Seasons</Link>
+        <Link to="/popular" className="nav-link" onClick={toggleMobileMenu}>Popular</Link>
+        <Link to="/investors" className="nav-link" onClick={toggleMobileMenu}>Investors</Link>
+        <Link to="/contact" className="nav-link" onClick={toggleMobileMenu}>Contact</Link>
+        <Link to="/more" className="nav-link" onClick={toggleMobileMenu}>More</Link>
       </div>
 
-      {/* Navigation */}
+      {/* 🔹 Desktop Navigation (Unchanged) */}
       <nav className="nav-container">
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/allproducts" className="nav-link">All Products</Link>
 
           {/* Categories Dropdown */}
-          <div 
-            className="dropdown" 
-            onMouseEnter={() => setDropdownOpen(true)} 
-            onMouseLeave={() => setDropdownOpen(false)}
-            onClick={toggleDropdown}
-          >
+          <div className="dropdown" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)} onClick={toggleDropdown}>
             <span className="nav-link">Categories</span>
             <div className={`dropdown-content ${dropdownOpen ? "show" : ""}`}>
               {categories.map((category, index) => (
@@ -97,15 +133,14 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Seasons Link */}
           <Link to="/seasons" className="nav-link">Seasons</Link>
           <Link to="/popular" className="nav-link">Popular</Link>
           <Link to="/investors" className="nav-link">Investors</Link>
-          <Link to="/Contact" className="nav-link">Contact</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
           <Link to="/more" className="nav-link">More</Link>
         </div>
 
-        {/* 🔹 Search Bar (Fixed) */}
+        {/* 🔹 Search Bar (Desktop - Unchanged) */}
         <div className="search-container">
           <input 
             type="text" 
@@ -114,7 +149,7 @@ useEffect(() => {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           
-          {/* 🔹 Search Results Dropdown */}
+          {/* 🔹 Search Results Dropdown (Desktop) */}
           {searchResults.length > 0 && (
             <div className="search-results">
               {searchResults.map((product) => (
