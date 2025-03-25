@@ -103,9 +103,36 @@
   background: #cc0000;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
+/* 🎯 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
   .contact-popup {
-    width: 90%;
+    width: 60%; /* Make it fit better on small screens */
+    padding: 20px; /* Reduce padding for better spacing */
+  }
+
+  .contact-popup h2 {
+    font-size: 18px; /* Adjust title size */
+  }
+
+  .contact-popup label {
+    font-size: 13px; /* Adjust label text size */
+  }
+
+  .contact-popup input,
+  .contact-popup textarea {
+    font-size: 14px; /* Adjust input font size */
+    padding: 10px; /* Reduce padding for compact layout */
+  }
+
+  .contact-popup button {
+    font-size: 14px; /* Adjust button text size */
+    padding: 20px; /* Reduce button padding */
+  }
+
+  /* Close Button */
+  .contact-popup .close-btn {
+    width: auto; /* Auto-size for better fit */
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 14px; /* Adjust text size */
   }
 }

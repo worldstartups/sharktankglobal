@@ -206,4 +206,149 @@
   background: #0056b3;
   transform: scale(1.05);
 }
- 
+ /* 🌟 Mobile View Adjustments */
+@media (max-width: 768px) {
+  /* ✅ Welcome Section */
+  .welcome-section {
+    padding: 30px; /* Reduce padding */
+    margin-bottom: 20px; /* Reduce spacing */
+  }
+
+  .welcome-section h1 {
+    font-size: 36px; /* Adjust heading size */
+  }
+
+  .welcome-section p {
+    font-size: 16px; /* Adjust paragraph size */
+  }
+
+  /* ✅ Product Container */
+  .product-container {
+    gap: 10px; /* Reduce gap */
+    padding: 5px; /* Reduce padding */
+    justify-content: center;
+  }
+
+  .product-card {
+    width: 90%; /* Use full width */
+    padding: 12px; /* Reduce padding */
+    margin-bottom: 10px; /* Reduce space */
+  }
+
+  .product-card h3 {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .product-card p {
+    font-size: 0.85rem; /* Adjust text size */
+  }
+
+  .product-card button {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 8px; /* Reduce padding */
+  }
+
+  /* ✅ Discounts & Offers Section */
+  .offers-container {
+    flex-direction: column; /* Stack offers vertically */
+    gap: 10px; /* Reduce spacing */
+  }
+
+  .offer-card {
+    width: 90%; /* Take full width */
+    padding: 10px; /* Reduce padding */
+  }
+
+  /* ✅ Carousel Adjustments */
+  .carousel-container {
+    max-width: 100%; /* Full width */
+  }
+
+  .carousel-slide {
+    min-height: 140px; /* Reduce height */
+  }
+
+  .carousel-btn {
+    padding: 8px; /* Reduce button size */
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  /* ✅ Featured & Trending Section */
+  .featured-card img, .trending-card img {
+    max-width: 180px; /* Reduce image size */
+  }
+
+  .featured-card button, .trending-card button {
+    font-size: 0.85rem; /* Adjust button size */
+    padding: 6px; /* Reduce padding */
+  }
+
+  /* ✅ Header Mobile View */
+  .hamburger-menu {
+    display: block; /* Show menu icon */
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-container.open {
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links .nav-link {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+  }
+
+  /* ✅ Keep Only Home, Seasons, and Investors Visible in Header */
+  .nav-links .nav-link:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+    display: none;
+  }
+
+  /* ✅ Move Hidden Items to Hamburger Menu */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu .nav-link {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+  }
+}

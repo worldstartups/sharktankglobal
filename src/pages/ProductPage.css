@@ -58,3 +58,24 @@
 .buy-now-button:hover {
   background-color: #f38c37;
 }
+/* 🎯 Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .product-container {
+    max-width: 100%; /* Utilize full mobile screen width */
+    margin: 60px 10px; /* Reduce top margin for better fit */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .product-details h1 {
+    font-size: 22px; /* Adjust heading size for readability */
+  }
+
+  .product-details p {
+    font-size: 16px; /* Adjust text size for mobile */
+  }
+
+  .buy-now-button {
+    font-size: 16px; /* Adjust button text size */
+    padding: 10px; /* Slightly smaller padding */
+  }
+}
