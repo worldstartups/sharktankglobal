@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../components/Header.css";
+const logoUrl = "/images/logo.png"; // Use relative path to the public folder
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -85,7 +86,14 @@ const Header = () => {
 
   return (
     <header className="header">
+       <div className="header-left">
+        {/* 🔹 Logo added on the left */}
+        <Link to="/">
+          <img src={logoUrl} alt="Shark Tank India Logo" className="logo" />
+        </Link>
+      </div>
       {/* 🔹 Hamburger for Mobile */}
+
       <button className="hamburger" onClick={toggleMobileMenu}>
         ☰
       </button>
