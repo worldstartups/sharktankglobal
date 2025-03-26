@@ -55,6 +55,7 @@ const HomePage = () => {
         Discover innovative products, inspiring entrepreneurs, and legendary 
         investors from Shark Tank India. Explore the best products pitched 
         on the show and support your favorite startups!
+        
       </p>
     </section>
       {/* Hero Section */}

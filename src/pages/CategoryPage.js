@@ -27,6 +27,7 @@ const CategoryPage = () => {
     <div className="category-page">
       <Header />
       <h1>{categoryName.replace(/\b\w/g, (char) => char.toUpperCase())}</h1>
+      <hr />
 
       <div className="product-list">
         {products.length === 0 ? (

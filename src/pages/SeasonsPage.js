@@ -29,8 +29,7 @@ const SeasonsPage = () => {
       const seasonInfo = seasonsData.find(season => season.season.toString() === selectedSeason);
       setEpisodes(seasonInfo ? seasonInfo.episodes : []);
 
-      // Fix the URL to use the correct external URL for the season's data file
-      const seasonFile = `https://worldstartups.github.io/sharktankglobal/data/Season${selectedSeason}.json`; // Updated URL for SeasonX.json
+      const seasonFile = `https://worldstartups.github.io/sharktankglobal/data/Season${selectedSeason}.json`;
       fetch(seasonFile)
         .then((response) => response.json())
         .then((data) => setProducts(data.companies))
@@ -77,27 +76,37 @@ const SeasonsPage = () => {
       </div>
 
       <div className="product-list">
-        {products.filter(product => selectedEpisode === "All" || product.episode_no === Number(selectedEpisode)).length === 0 ? (
-          <p>No products found for this season or episode.</p>
-        ) : (
-          products
-            .filter(product => selectedEpisode === "All" || product.episode_no === Number(selectedEpisode))
-            .map((product) => (
-              <Link to={`/product/${product.id}`} key={product.id} className="product-card">
-                <div className="product-card-content">
-                  <img src={product.image} alt={product.company} />
-                  <h2>{product.company}</h2>
-                  <p>{product.product}</p>
-                  <p><strong>Category:</strong> {product.category}</p>
-                  <p><strong>Investors:</strong> {Array.isArray(product.investors) ? product.investors.join(", ") : "No Investors"}</p>
-                  <p><strong>Valuation:</strong> ₹{product.valuation.toLocaleString()}</p>
-                  <button className="view-button">
-                    <FaEye style={{ marginRight: "5px" }} /> View
-                  </button>
-                </div>
-              </Link>
-            ))
-        )}
+      {episodes
+  .filter(ep => selectedEpisode === "All" || ep.toString() === selectedEpisode)
+  .map((episode) => {
+    const episodeProducts = products.filter(product => product.episode_no.toString() === episode.toString());
+
+          if (episodeProducts.length === 0) return null; // Skip empty episodes
+
+          return (
+            <div key={episode} className="episode-section">
+              <h2 className="episode-header">Season {selectedSeason} Episode {episode}</h2>
+              <hr className="episode-divider" />
+              <div className="episode-products">
+                {episodeProducts.map((product) => (
+                  <Link to={`/product/${product.id}`} key={product.id} className="product-card">
+                    <div className="product-card-content">
+                      <img src={product.image} alt={product.company} />
+                      <h2>{product.company}</h2>
+                      <p>{product.product}</p>
+                      <p><strong>Category:</strong> {product.category}</p>
+                      <p><strong>Investors:</strong> {Array.isArray(product.investors) ? product.investors.join(", ") : "No Investors"}</p>
+                      <p><strong>Valuation:</strong> ₹{product.valuation.toLocaleString()}</p>
+                      <button className="view-button">
+                        <FaEye style={{ marginRight: "5px" }} /> View
+                      </button>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

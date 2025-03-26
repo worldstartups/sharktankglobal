@@ -82,6 +82,7 @@ const PopularPage = () => {
     <div className="popular-page">
       <Header /> {/* ✅ Add Header component */}
       <h1>Popular Products</h1>
+      <hr />
       <div className="product-list">
         {loading ? (
           <p>Loading popular products...</p>

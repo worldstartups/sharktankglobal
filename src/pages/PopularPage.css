@@ -1,14 +1,20 @@
 .popular-page {
     text-align: center;
-    padding: 60px;
+    padding: 80px;
   }
+  .popular-page h1 {
+    font-family: 'Playfair Display', serif;  /* Change to your preferred font */
+    background: linear-gradient(135deg, #c4f74f, #c9e97e);
+    font-size: 35px;
   
+  }
   .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 4px; /* ✅ Adds space between cards */
   }
+
   
   .product-card-link {
     text-decoration: none;
@@ -39,7 +45,7 @@
   }
 
   .product-card {
-    width: 90%; /* Ensure cards fit properly on mobile */
+    width: 95%; /* Ensure cards fit properly on mobile */
     padding: 12px; /* Reduce padding */
     margin: 8px 0; /* Adjust margin for better spacing */
   }

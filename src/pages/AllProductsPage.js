@@ -68,6 +68,7 @@ const AllProductsPage = () => {
     <div className="all-products-page">
       <Header />
       <h1>All Products</h1>
+      <hr />
       <div className="product-list">
         {allProducts.length === 0 ? (
           <p>No products found.</p>
@@ -79,10 +80,11 @@ const AllProductsPage = () => {
                 <img src={product.image} alt={product.product} className="product-image" />
 
                 <div className="product-details">
-                  <h2>{product.product}</h2>
-                  <p><strong>Company:</strong> {product.company}</p>
+                  <h2>{product.company}</h2>
+                  <p><strong>Product:</strong> {product.product}</p>
                   <p><strong>Category:</strong> {product.category}</p>
                   <p><strong>Sub-Category:</strong> {product.subcategory}</p>
+                  
                 </div>
 
                 {/* View Button */}
@@ -99,3 +101,4 @@ const AllProductsPage = () => {
 };
 
 export default AllProductsPage;
+

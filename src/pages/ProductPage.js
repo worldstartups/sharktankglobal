@@ -38,6 +38,7 @@ const ProductPage = () => {
       <div className="product-container">
         <div className="product-details">
           <h1>{product.company}</h1>
+          <hr />
 
 
 

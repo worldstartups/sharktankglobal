@@ -13,7 +13,8 @@ const InvestorsPage = () => {
   return (
     <div className="investor-page">
       <Header />
-      <h1>Our Investors</h1>
+      <h1>Investors</h1>
+      <hr />
 
       <div className="investor-list">
         {investors.length === 0 ? (

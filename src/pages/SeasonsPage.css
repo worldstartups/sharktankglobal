@@ -7,7 +7,28 @@ h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+.episode-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  padding: 10px 0;
+}
 
+.episode-section {
+  margin-bottom: 20px;
+}
+
+.episode-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.episode-divider {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
 /* Tab container for seasons and episodes */
 .tabs-container {
   display: flex;
@@ -201,7 +222,7 @@ select::-ms-expand {
   }
 
   .product-card {
-    width: 90%; /* Use full width with margin */
+    width: 95%; /* Use full width with margin */
     margin-bottom: 15px; /* Add spacing between cards */
   }
 

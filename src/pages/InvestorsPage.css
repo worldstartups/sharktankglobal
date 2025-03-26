@@ -3,6 +3,12 @@
   padding: 80px;
   background-color: #f8f9fa;
 }
+.investor-page h1 {
+  font-family: 'Playfair Display', serif;  /* Change to your preferred font */
+  background: linear-gradient(135deg, #895fec, #a790e9);
+  font-size: 35px;
+
+}
 
 .investor-list {
   display: flex;

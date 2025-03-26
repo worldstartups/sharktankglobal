@@ -3,6 +3,12 @@
   padding: 80px;
   text-align: center;
 }
+.category-page h1{
+  font-family: 'Playfair Display', serif;  /* Change to your preferred font */
+  background: linear-gradient(135deg, #eb8a83, #f7c791);
+  font-size: 35px;
+
+}
 
 .product-list {
   display: flex;
