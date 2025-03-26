@@ -9,33 +9,34 @@ const SeasonsPage = () => {
   const [episodes, setEpisodes] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState("1"); // Default to Season 1
-const [selectedEpisode, setSelectedEpisode] = useState("All"); // Default to All Episodes
+  const [selectedEpisode, setSelectedEpisode] = useState("All"); // Default to All Episodes
 
-
-useEffect(() => {
-  fetch("/data/seasons.json")
-    .then((response) => response.json())
-    .then((data) => {
-      setSeasonsData(data.seasons);
-      const defaultSeason = data.seasons.find(season => season.season === 1);
-      if (defaultSeason) {
-        setEpisodes(defaultSeason.episodes);
-      }
-    })
-    .catch((error) => console.error("Error fetching seasons data:", error));
-}, []);
-
-useEffect(() => {
-  if (selectedSeason) {
-    const seasonInfo = seasonsData.find(season => season.season.toString() === selectedSeason);
-    setEpisodes(seasonInfo ? seasonInfo.episodes : []);
-
-    fetch(`/data/Season${selectedSeason}.json`)
+  useEffect(() => {
+    fetch('https://worldstartups.github.io/sharktankglobal/data/seasons.json')
       .then((response) => response.json())
-      .then((data) => setProducts(data.companies))
-      .catch((error) => console.error(`Error fetching Season${selectedSeason} data:`, error));
-  }
-}, [selectedSeason]);
+      .then((data) => {
+        setSeasonsData(data.seasons);
+        const defaultSeason = data.seasons.find(season => season.season === 1);
+        if (defaultSeason) {
+          setEpisodes(defaultSeason.episodes);
+        }
+      })
+      .catch((error) => console.error("Error fetching seasons data:", error));
+  }, []);
+
+  useEffect(() => {
+    if (selectedSeason) {
+      const seasonInfo = seasonsData.find(season => season.season.toString() === selectedSeason);
+      setEpisodes(seasonInfo ? seasonInfo.episodes : []);
+
+      // Fix the URL to use the correct external URL for the season's data file
+      const seasonFile = `https://worldstartups.github.io/sharktankglobal/data/Season${selectedSeason}.json`; // Updated URL for SeasonX.json
+      fetch(seasonFile)
+        .then((response) => response.json())
+        .then((data) => setProducts(data.companies))
+        .catch((error) => console.error(`Error fetching Season${selectedSeason} data:`, error));
+    }
+  }, [selectedSeason, seasonsData]);
 
   const handleSeasonChange = (event) => {
     setSelectedSeason(event.target.value);
@@ -53,7 +54,6 @@ useEffect(() => {
       <div className="tabs-container">
         <div className="seasons-dropdown">
           <select id="season-select" value={selectedSeason} onChange={handleSeasonChange}>
-            
             {seasonsData.map((season) => (
               <option key={season.season} value={season.season}>
                 Season {season.season}

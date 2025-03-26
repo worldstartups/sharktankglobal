@@ -14,7 +14,7 @@ const Header = () => {
   useEffect(() => {
     const fetchSeasonsData = async () => {
       try {
-        const seasonsResponse = await fetch("/data/seasons.json");
+        const seasonsResponse = await fetch("https://worldstartups.github.io/sharktankglobal/data/seasons.json");
         const seasons = await seasonsResponse.json();
         console.log("Seasons Data:", seasons);
 
@@ -23,7 +23,9 @@ const Header = () => {
 
         for (let season of seasons.seasons) {
           const seasonNumber = season.season;
-          const seasonDataResponse = await fetch(`/data/Season${seasonNumber}.json`);
+
+          // Use the correct URL for fetching season data
+          const seasonDataResponse = await fetch(`https://worldstartups.github.io/sharktankglobal/data/Season${seasonNumber}.json`);
           const seasonData = await seasonDataResponse.json();
 
           seasonData.companies.forEach((product) => {
@@ -183,4 +185,3 @@ const Header = () => {
 };
 
 export default Header;
-

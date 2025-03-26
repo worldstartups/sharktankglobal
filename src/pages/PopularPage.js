@@ -43,7 +43,7 @@ const PopularPage = () => {
           const seasonNumber = season.season;
           
           // Fetch specific season data (e.g., Season1.json, Season2.json)
-          const seasonFile = `/data/Season${seasonNumber}.json`;  // Path to the specific season file
+          const seasonFile = `https://worldstartups.github.io/sharktankglobal/data/Season${seasonNumber}.json`;  // Updated URL for specific season file
           const seasonDetails = await fetch(seasonFile)
             .then((response) => response.json())
             .catch((err) => {

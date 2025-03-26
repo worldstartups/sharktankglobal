@@ -13,8 +13,7 @@ const AllProductsPage = () => {
   useEffect(() => {
     const fetchSeasonsData = async () => {
       try {
-        const response = await fetch('https://worldstartups.github.io/sharktankglobal/data/seasons.json')
-
+        const response = await fetch('https://worldstartups.github.io/sharktankglobal/data/seasons.json');
         const data = await response.json();
         setSeasonsData(data.seasons);
       } catch (error) {
@@ -33,7 +32,7 @@ const AllProductsPage = () => {
 
         // Loop through each season and fetch its products
         for (const season of seasonsData) {
-          const seasonResponse = await fetch(`/data/Season${season.season}.json`);
+          const seasonResponse = await fetch(`https://worldstartups.github.io/sharktankglobal/data/Season${season.season}.json`);
           
           // Log the response text to check for issues
           const text = await seasonResponse.text();
