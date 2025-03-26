@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import seasonsData from "./SeasonsProducts.json";
+import masterData from "./MasterData.json";
 import Header from "../components/Header";
-import "./ProductPage.css"; // Add styling as needed
+import "./ProductPage.css";
+
+// ✅ Import the image dynamically
+import cosiqImage from "../assets/season1images/cosiq.jpg"; 
 
 const ProductPage = () => {
-  const { id } = useParams(); // Get product ID from URL
-  let product = null;
-  let seasonKey = null; // ✅ Define seasonKey
+  const { id } = useParams();
+  const [storyContent, setStoryContent] = useState(null);
 
-  // ✅ Find the correct season and stop looping after finding the product
-  for (const [key, season] of Object.entries(seasonsData)) {
-    const foundProduct = season.find((p) => p.id === parseInt(id));
-    if (foundProduct) {
-      product = foundProduct;
-      seasonKey = key; // ✅ Store the season key (e.g., "season1", "season2")
-      break; // ✅ Stop loop after finding the first match
+  // Find the product by ID
+  const product = masterData.companies.find((p) => p.id === parseInt(id));
+
+  useEffect(() => {
+    if (product?.story_link) {
+      fetch(product.story_link)
+        .then((res) => res.text())
+        .then((html) => setStoryContent(html))
+        .catch((err) => console.error("Failed to load story:", err));
     }
-  }
+  }, [product?.story_link]);
 
-  // If product not found
   if (!product) {
     return (
       <div>
@@ -29,40 +32,46 @@ const ProductPage = () => {
     );
   }
 
-  // Function to handle "Buy Now" button click
-  const handleBuyNow = () => {
-    if (product.website) {
-      window.open(product.website, "_blank"); // Open link in a new tab
-    } else {
-      alert("Product link not available");
-    }
-  };
-
   return (
     <div>
       <Header />
       <div className="product-container">
-        <img src={`/images/${product.image}`} alt={product.name} className="product-image" />
         <div className="product-details">
-        <h1>{product.name}</h1>
+          <h1>{product.company}</h1>
+
+
+<img
+        src={product.image} // ✅ Use only the main image (No hover effect)
+        alt={product.name}
+        className="product-image"
+      />
+
+
+          <p><strong>Company:</strong> {product.company}</p>
+          <p><strong>Product:</strong> {product.product}</p>
           <p><strong>Category:</strong> {product.category}</p>
-          <p><strong>Sub-Category:</strong> {product.subCategory}</p>
-          <p><strong>Description:</strong> {product.description}</p>
-          <p><strong>Investors:</strong> {product.investors}</p>
-          <p><strong>Valuation:</strong> ${product.valuation.toLocaleString()}</p>
+          <p><strong>Sub-Category:</strong> {product.subcategory}</p>
+          <p><strong>City:</strong> {product.city}, {product.state}</p>
+          <p><strong>Founders:</strong> {product.founders?.join(", ")}</p>
+          <p><strong>Investors:</strong> {product.investors?.join(", ")}</p>
+          <p><strong>Valuation:</strong> ₹{product.valuation.toLocaleString()}</p>
+          <p><strong>Original Ask:</strong> {product.original_ask_equity}</p>
+          <p><strong>Final Deal:</strong> {product.final_equity}</p>
           <p>
-            <strong>Season:</strong> {seasonKey?.replace("season", "")} |  
-            <strong>Episode:</strong> {product.episode} |  
-            <strong>Date:</strong> {product.date}
+            <strong>Season:</strong> {product.season_no} |  
+            <strong>Episode:</strong> {product.episode_no} |  
+            <strong>Date:</strong> {product.episode_air_date}
           </p>
 
-          {/* ✅ Always show Buy Now button */}
-          <button 
-            className="buy-now-button" 
-            onClick={handleBuyNow}
-          >
-            Buy Now
-          </button>
+          {/* Story Below Image */}
+          {product.story ? (
+            <div className="story-container" dangerouslySetInnerHTML={{ __html: product.story }} />
+          ) : (
+            <p>No detailed story available.</p>
+          )}
+
+          {/* Buy Now Button */}
+          <button className="buy-now-button">Buy Now</button>
         </div>
       </div>
     </div>
