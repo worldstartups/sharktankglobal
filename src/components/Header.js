@@ -89,8 +89,8 @@ const Header = () => {
        <div className="header-left">
         {/* 🔹 Logo added on the left */}
         <Link to="/">
-          <img src={logoUrl} alt="Shark Tank India Logo" className="logo" />
-        </Link>
+    <img src="https://worldstartups.github.io/sharktankglobal/images/logo.png" alt="Shark Tank India Logo" className="logo" />
+  </Link>
       </div>
       {/* 🔹 Hamburger for Mobile */}
 

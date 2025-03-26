@@ -18,13 +18,11 @@
 }
 
 .logo {
+  display: block;
   height: 50px; /* Adjust size as needed */
   width: auto;
 }
-.logo {
-  height: 50px; /* Adjust size as needed */
-  width: auto;
-}
+
 
 /* Navigation Styles */
 .nav-container {
