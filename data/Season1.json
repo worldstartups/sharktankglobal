@@ -84,7 +84,7 @@
         {
             "id": 5,
             "company": "Head and Heart",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/headandheart.jpg",
+            "image": "https://worldstartups.github.io/sharktankglobal/images/headandheart.jpeg",
             "product": "Brain Development Course",
             "season_no": 1,
             "episode_no": 2,
@@ -104,7 +104,7 @@
         {
             "id": 6,
             "company": "Agri Tourism",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/agritourism.jpg",
+            "image": "https://worldstartups.github.io/sharktankglobal/images/agritourism.jpeg",
             "product": "Rural Tourism",
             "season_no": 1,
             "episode_no": 2,
@@ -144,7 +144,7 @@
         {
             "id": 8,
             "company": "Peeschute",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/peeschute.jpg",
+            "image": "https://worldstartups.github.io/sharktankglobal/images/peeschute.jpeg",
             "product": "Disposable Urine Bag",
             "season_no": 1,
             "episode_no": 3,
@@ -322,7 +322,7 @@
             {
             "id": 17,
             "company": "Menstrupedia",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/menstrupedia.jpg",
+            "image": "https://worldstartups.github.io/sharktankglobal/images/menstrupedia.jpeg",
             "product": "Menstrual Awareness Comic",
             "season_no": 1,
             "episode_no": 6,
@@ -342,7 +342,7 @@
             {
             "id": 18,
             "company": "Hecoll",
-            "image": "https://worldstartups.github.io/sharktankglobal/images/hecoll.jpg",
+            "image": "https://worldstartups.github.io/sharktankglobal/images/hecoll.jpeg",
             "product": "Pollution Resistant Fabric",
             "season_no": 1,
             "episode_no": 6,
@@ -383,7 +383,7 @@
     {
     "id": 20,
     "company": "Torchit",
-    "image": "https://worldstartups.github.io/sharktankglobal/images/torchit.jpg",
+    "image": "https://worldstartups.github.io/sharktankglobal/images/torchit.jpeg",
     "product": "Products for visually impaired people",
     "season_no": 1,
     "episode_no": 7,
@@ -483,7 +483,7 @@
         {
         "id": 25,
         "company": "Altor",
-        "image": "https://worldstartups.github.io/sharktankglobal/images/altor.jpg",
+        "image": "https://worldstartups.github.io/sharktankglobal/images/altor.jpeg",
         "product": "Smart Helmets",
         "season_no": 1,
         "episode_no": 9,
@@ -603,7 +603,7 @@
             {
                 "id": 31,
                 "company": "Gopal's 56",
-                "image": "https://worldstartups.github.io/sharktankglobal/images/gopals56.jpg",
+                "image": "https://worldstartups.github.io/sharktankglobal/images/gopals56.jpeg",
                 "product": "Fiber Ice Cream",
                 "season_no": 1,
                 "episode_no": 11,
