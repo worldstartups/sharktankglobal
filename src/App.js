@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import IndiaPage from "./pages/IndiaPage";
 import InvestorsPage from "./pages/InvestorsPage"; 
 import SeasonsPage from './pages/SeasonsPage';
 import CategoryPage from "./pages/CategoryPage";  
@@ -17,7 +16,6 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       
-      <Route path="/india" element={<IndiaPage />} />
       <Route path="/seasons" element={<SeasonsPage />} /> {/* Dynamic route for seasons */}
       <Route path="/investors" element={<InvestorsPage />} />  {/* Add the investor route */}
       <Route path="/categories/:categoryName" element={<CategoryPage key={window.location.pathname} />} />

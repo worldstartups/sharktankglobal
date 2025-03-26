@@ -1,0 +1,27 @@
+{
+    "season": 1,
+    "companies": [
+      {
+        "id": 5,
+        "company": "CosIQ",
+        "image": "https://worldstartups.github.io/sharktankglobal/images/cosiq.jpg",
+
+        "product": "Intelligent Skincare",
+        "season_no": 1,
+        "episode_no": 4,
+        "episode_air_date": "23/12/2021",
+        "investors": ["Anupam Mittal", "Vineeta Singh"],
+        "city": "New Delhi",
+        "state": "Delhi",
+        "category": "Skincare",
+        "subcategory": "Smart Skincare",
+        "founders": ["Angad Ahuja", "Kanika Ahuja"],
+        "valuation": 10000000,
+        "original_ask_equity": "₹50 lakhs for 7% equity",
+        "final_equity": "₹50 lakhs for 25% equity",
+        "Buy": "https://www.example.in/",
+        "story": "<h2>The Journey of CosIQ on Shark Tank India</h2> <p>CosIQ is a revolutionary skincare brand that uses intelligent formulations to provide high-performance skincare solutions. Founded by <strong>Angad Ahuja</strong> and <strong>Kanika Ahuja</strong>, the brand focuses on scientific research and innovation to bring smarter skincare to consumers.</p> <h3>The Pitch</h3> <p>During their pitch on Shark Tank India, the founders presented their vision for smart skincare, emphasizing how CosIQ leverages AI and advanced research to create personalized skincare routines. Their initial ask was <strong>₹50 lakhs for 7% equity</strong>.</p> <h3>The Investment Deal</h3> <p>After a series of negotiations, <strong>Anupam Mittal</strong> and <strong>Vineeta Singh</strong> saw potential in the brand and decided to invest. The final deal was sealed at <strong>₹50 lakhs for 25% equity</strong>, giving the founders the financial boost they needed.</p> <h3>Post Shark Tank Growth</h3> <p>Since appearing on the show, CosIQ has gained massive traction, expanding its product range and reaching a broader audience. The investment helped them scale production, invest in R&D, and establish themselves as a trusted name in the skincare industry.</p>"
+      }
+    ]
+  }
+  
