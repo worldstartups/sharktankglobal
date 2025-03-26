@@ -6,7 +6,7 @@ import "./PopularPage.css";
 
 // Function to dynamically import the season data
 const importSeasonData = () => {
-  return fetch('/data/seasons.json')  // Load the seasons data
+  return fetch('https://worldstartups.github.io/sharktankglobal/data/seasons.json')  // Load the seasons data
     .then((response) => {
       if (!response.ok) {
         throw new Error('Failed to fetch seasons data');
