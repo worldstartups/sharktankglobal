@@ -12,6 +12,15 @@
   left: 0;
   z-index: 1000;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px; /* Adjust size as needed */
+  width: auto;
+}
 .logo {
   height: 50px; /* Adjust size as needed */
   width: auto;
