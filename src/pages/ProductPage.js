@@ -40,11 +40,7 @@ const ProductPage = () => {
           <h1>{product.company}</h1>
 
 
-<img
-        src={product.image} // ✅ Use only the main image (No hover effect)
-        alt={product.name}
-        className="product-image"
-      />
+
 
 
           <p><strong>Company:</strong> {product.company}</p>
@@ -62,6 +58,12 @@ const ProductPage = () => {
             <strong>Episode:</strong> {product.episode_no} |  
             <strong>Date:</strong> {product.episode_air_date}
           </p>
+
+          <img
+        src={product.image} // ✅ Use only the main image (No hover effect)
+        alt={product.name}
+        className="product-image"
+      />
 
           {/* Story Below Image */}
           {product.story ? (

@@ -1,72 +1,109 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import masterData from "./MasterData.json";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import Header from "../components/Header";
-import "./ProductPage.css";
+import { FaEye } from "react-icons/fa";
+import "./PopularPage.css";
 
-const ProductPage = () => {
-  const { id } = useParams();
+// Function to dynamically import the season data
+const importSeasonData = () => {
+  return fetch('/data/seasons.json')  // Load the seasons data
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch seasons data');
+      }
+      return response.json();
+    })
+    .then((seasonsData) => {
+      console.log("Fetched Seasons Data:", seasonsData); // Log to inspect the data
+      return seasonsData; // Return the data for further use
+    })
+    .catch((err) => {
+      console.error('Error loading seasons data:', err);
+      return null; // Return null if there's an error
+    });
+};
 
-  // Find the product by ID
-  const product = masterData.companies.find((p) => p.id === parseInt(id));
+const PopularPage = () => {
+  const [popularProducts, setPopularProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // If product not found
-  if (!product) {
-    return (
-      <div>
-        <Header />
-        <h2>Product not found</h2>
-      </div>
-    );
-  }
+  useEffect(() => {
+    const fetchPopularProducts = async () => {
+      try {
+        const popularEpisodes = [];
+        
+        // Fetch season data dynamically
+        const seasonData = await importSeasonData();
+        if (!seasonData) return; // If no data, exit
+
+        // Loop through each popular season and fetch its products
+        const popularSeasons = seasonData.popular;  // The popular seasons data
+
+        for (let season of popularSeasons) {
+          const seasonNumber = season.season;
+          
+          // Fetch specific season data (e.g., Season1.json, Season2.json)
+          const seasonFile = `/data/Season${seasonNumber}.json`;  // Path to the specific season file
+          const seasonDetails = await fetch(seasonFile)
+            .then((response) => response.json())
+            .catch((err) => {
+              console.error(`Error loading Season ${seasonNumber}:`, err);
+              return null;
+            });
+
+          if (!seasonDetails) continue; // If no season details, skip this iteration
+
+          // Log season details to check if the "companies" data is available
+          console.log(`Season ${seasonNumber} Products:`, seasonDetails.companies);
+
+          // Filter products that match popular episodes
+          season.episodes.forEach((episodeNo) => {
+            const episodeProduct = seasonDetails.companies.find(
+              (product) => product.episode_no === episodeNo
+            );
+            if (episodeProduct) {
+              popularEpisodes.push(episodeProduct);
+            }
+          });
+        }
+
+        setPopularProducts(popularEpisodes);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching popular products:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchPopularProducts();
+  }, []);
 
   return (
-    <div>
-      <Header />
-      <div className="product-container">
-        <div className="product-details">
-          <h1>{product.company}</h1>
-
-          {/* ✅ Display Image from src/assets */}
-          {product.image && (
-            <img
-              src={process.env.PUBLIC_URL + product.image} 
-              alt={product.company}
-              className="product-image"
-            />
-          )}
-
-          <p><strong>Company:</strong> {product.company}</p>
-          <p><strong>Product:</strong> {product.product}</p>
-          <p><strong>Category:</strong> {product.category}</p>
-          <p><strong>Sub-Category:</strong> {product.subcategory}</p>
-          <p><strong>City:</strong> {product.city}, {product.state}</p>
-          <p><strong>Founders:</strong> {product.founders?.join(", ")}</p>
-          <p><strong>Investors:</strong> {product.investors?.join(", ")}</p>
-          <p><strong>Valuation:</strong> ₹{product.valuation.toLocaleString()}</p>
-          <p><strong>Original Ask:</strong> {product.original_ask_equity}</p>
-          <p><strong>Final Deal:</strong> {product.final_equity}</p>
-          <p>
-            <strong>Season:</strong> {product.season_no} |  
-            <strong>Episode:</strong> {product.episode_no} |  
-            <strong>Date:</strong> {product.episode_air_date}
-          </p>
-
-          {/* ✅ Display Story */}
-          {product.story ? (
-            <div className="story-container" dangerouslySetInnerHTML={{ __html: product.story }} />
-          ) : (
-            <p>No detailed story available.</p>
-          )}
-
-          {/* ✅ "Buy Now" Button */}
-          <a href={product.Buy} target="_blank" rel="noopener noreferrer">
-            <button className="buy-now-button">Buy Now</button>
-          </a>
-        </div>
+    <div className="popular-page">
+      <Header /> {/* ✅ Add Header component */}
+      <h1>Popular Products</h1>
+      <div className="product-list">
+        {loading ? (
+          <p>Loading popular products...</p>
+        ) : popularProducts.length === 0 ? (
+          <p>No popular products found.</p>
+        ) : (
+          popularProducts.map((product) => (
+            // Wrap the entire card in the Link component to make the whole card clickable
+            <Link to={`/product/${product.id}`} className="product-card" key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <h2>{product.company}</h2>
+              <p>{product.product}</p>
+              <p><strong>Category:</strong> {product.category}</p>
+              <div className="buy-button">
+                <FaEye style={{ marginRight: "5px" }} /> View
+              </div>
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );
 };
 
-export default ProductPage;
+export default PopularPage;
