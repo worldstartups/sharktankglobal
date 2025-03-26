@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import seasonsData from "./SeasonsProducts.json"; 
+import masterData from "./MasterData.json"; 
 import Header from "../components/Header";
 import "./CategoryPage.css";
 import { FaEye } from "react-icons/fa"; 
@@ -12,13 +12,10 @@ const CategoryPage = () => {
   useEffect(() => {
     console.log("Category changed to:", categoryName); // Debugging log
 
-    // ✅ Reset products before updating
-    setProducts([]);
-
-    // ✅ Fetch only products of the selected category
-    const filteredProducts = Object.values(seasonsData)
-      .flatMap((season) => season)
-      .filter((product) => product.category.toLowerCase() === categoryName.toLowerCase());
+    // ✅ Filter products from MasterData.json
+    const filteredProducts = masterData.companies.filter(
+      (product) => product.category.toLowerCase() === categoryName.toLowerCase()
+    );
 
     console.log("Filtered products:", filteredProducts); // Debugging log
 
@@ -38,9 +35,11 @@ const CategoryPage = () => {
           products.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id} className="product-card-link">
               <div className="product-card">
-                <img src={`/images/${product.image}`} alt={product.name} />
-                <h2>{product.name}</h2>
-                <p>{product.description}</p>
+                <img 
+                  src={product.image || "/images/default.jpg"} // ✅ Use default image if missing
+                  alt={product.name || "Product Image"} 
+                />
+                <h2>{product.company}</h2> {/* ✅ Show company name instead of product.name */}
                 <p><strong>Category:</strong> {product.category}</p>
 
                 {/* View Button */}

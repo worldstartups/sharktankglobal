@@ -1,24 +1,69 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
-import masterData from "./MasterData.json";
-import "./AllProductsPage.css"; 
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import './AllProductsPage.css';
 import Header from "../components/Header";
-import { FaEye } from "react-icons/fa"; 
+import { FaEye } from "react-icons/fa";
 
 const AllProductsPage = () => {
   const [allProducts, setAllProducts] = useState([]);
+  const [seasonsData, setSeasonsData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  // Fetch the seasons data to get available seasons and episodes
   useEffect(() => {
-    const products = [];
+    const fetchSeasonsData = async () => {
+      try {
+        const response = await fetch('/data/seasons.json');
+        const data = await response.json();
+        setSeasonsData(data.seasons);
+      } catch (error) {
+        console.error('Error fetching seasons data:', error);
+      }
+    };
 
-    if (Array.isArray(masterData.companies)) {
-      products.push(...masterData.companies); // ✅ Now correctly accessing "companies"
-    } else {
-      console.warn("Invalid data format:", masterData);
-    }
-
-    setAllProducts(products);
+    fetchSeasonsData();
   }, []);
+
+  // Fetch all products dynamically from each SeasonX.json
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      try {
+        let products = [];
+
+        // Loop through each season and fetch its products
+        for (const season of seasonsData) {
+          const seasonResponse = await fetch(`/data/Season${season.season}.json`);
+          
+          // Log the response text to check for issues
+          const text = await seasonResponse.text();
+          console.log("Season data response text:", text);  // Log raw response
+
+          try {
+            const seasonData = JSON.parse(text); // Parse manually
+            if (Array.isArray(seasonData.companies)) {
+              products = [...products, ...seasonData.companies];
+            }
+          } catch (error) {
+            console.error(`Error parsing Season ${season.season} data:`, error);
+          }
+        }
+
+        setAllProducts(products);
+        setLoading(false); // Stop loading once products are fetched
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+        setLoading(false);
+      }
+    };
+
+    if (seasonsData.length > 0) {
+      fetchAllProducts();
+    }
+  }, [seasonsData]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Show a loading state while fetching data
+  }
 
   return (
     <div className="all-products-page">

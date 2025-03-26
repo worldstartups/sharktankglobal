@@ -1,72 +1,85 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import seasonsData from "../pages/SeasonsProducts.json";
+import { Link } from "react-router-dom";
 import "../components/Header.css";
 
 const Header = () => {
-  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
 
-  // Fetch categories from JSON
+  // 🔹 Fetch seasons and products data from JSON files
   useEffect(() => {
-    const allCategories = new Set();
-    Object.values(seasonsData).forEach((season) => {
-      season.forEach((product) => {
-        allCategories.add(product.category);
-      });
-    });
-    setCategories([...allCategories]);
+    const fetchSeasonsData = async () => {
+      try {
+        const seasonsResponse = await fetch("/data/seasons.json");
+        const seasons = await seasonsResponse.json();
+        console.log("Seasons Data:", seasons);
+
+        const allCategories = new Set();
+        let allProductsData = [];
+
+        for (let season of seasons.seasons) {
+          const seasonNumber = season.season;
+          const seasonDataResponse = await fetch(`/data/Season${seasonNumber}.json`);
+          const seasonData = await seasonDataResponse.json();
+
+          seasonData.companies.forEach((product) => {
+            if (product.category) {
+              allCategories.add(product.category);
+            }
+            allProductsData.push(product);
+          });
+        }
+
+        setCategories([...allCategories]);
+        setAllProducts(allProductsData);
+        console.log("All Products Data:", allProductsData);
+      } catch (error) {
+        console.error("Error fetching season data:", error);
+      }
+    };
+
+    fetchSeasonsData();
   }, []);
 
-  // Toggle dropdown on click
+  // 🔹 Handle Search Query
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    console.log("Search Query:", query);
+
+    const filteredResults = allProducts.filter((product) => {
+      const productNameMatch = product.product.toLowerCase().includes(query);
+      const companyNameMatch = product.company.toLowerCase().includes(query);
+      const categoryMatch = product.category.toLowerCase().includes(query);
+      const subcategoryMatch = product.subcategory.toLowerCase().includes(query);
+
+      return productNameMatch || companyNameMatch || categoryMatch || subcategoryMatch;
+    });
+
+    setSearchResults(filteredResults);
+    console.log("Filtered Results:", filteredResults);
+  };
+
+  // 🔹 Handle Product Selection
+  const handleProductSelect = (productId) => {
+    setSearchQuery("");
+    setSearchResults([]);
+  };
+
+  // 🔹 Toggle dropdown on click
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".dropdown")) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
-  // Toggle mobile menu
+  // 🔹 Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
-  // 🔹 Search Functionality
-  useEffect(() => {
-    if (searchQuery.trim() === "") {
-      setSearchResults([]);
-      return;
-    }
-
-    const productMap = new Map();
-
-    Object.values(seasonsData).forEach((season) => {
-      season.forEach((product) => {
-        if (
-          product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-          !productMap.has(product.id)
-        ) {
-          productMap.set(product.id, product);
-        }
-      });
-    });
-
-    setSearchResults([...productMap.values()]);
-  }, [searchQuery]);
 
   return (
     <header className="header">
@@ -75,37 +88,8 @@ const Header = () => {
         ☰
       </button>
 
-      {/* 🔹 Mobile Menu (Hidden by default) */}
+      {/* 🔹 Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? "open" : ""}`}>
-        {/* 🔹 Search inside Mobile Menu */}
-        <div className="mobile-search-container">
-          <input 
-            type="text" 
-            placeholder="Search Products..." 
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          
-          {/* 🔹 Search Results in Mobile Menu */}
-          {searchResults.length > 0 && (
-            <div className="search-results">
-              {searchResults.map((product) => (
-                <Link 
-                  key={product.id} 
-                  to={`/product/${product.id}`} 
-                  className="search-item"
-                  onClick={() => {
-                    setSearchQuery("");
-                    setMobileMenuOpen(false); // Close menu on selection
-                  }}
-                >
-                  {product.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-
         <Link to="/" className="nav-link" onClick={toggleMobileMenu}>Home</Link>
         <Link to="/allproducts" className="nav-link" onClick={toggleMobileMenu}>All Products</Link>
         <Link to="/seasons" className="nav-link" onClick={toggleMobileMenu}>Seasons</Link>
@@ -113,23 +97,51 @@ const Header = () => {
         <Link to="/investors" className="nav-link" onClick={toggleMobileMenu}>Investors</Link>
         <Link to="/contact" className="nav-link" onClick={toggleMobileMenu}>Contact</Link>
         <Link to="/more" className="nav-link" onClick={toggleMobileMenu}>More</Link>
+
+        {/* 🔹 Search in Mobile Menu */}
+        <div className="mobile-search">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearch}
+            placeholder="Search for company or product"
+          />
+          {searchQuery && searchResults.length > 0 && (
+            <div className="search-results">
+              {searchResults.slice(0, 10).map((product) => (
+                <Link
+                  key={product.id}
+                  to={`/product/${product.id}`}
+                  className="search-item"
+                  onClick={() => handleProductSelect(product.id)}  // Close results on select
+                >
+                  <strong>{product.company}</strong> - {product.product}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* 🔹 Desktop Navigation (Unchanged) */}
+      {/* 🔹 Desktop Navigation */}
       <nav className="nav-container">
         <div className="nav-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/allproducts" className="nav-link">All Products</Link>
 
-          {/* Categories Dropdown */}
+          {/* 🔹 Categories Dropdown */}
           <div className="dropdown" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)} onClick={toggleDropdown}>
             <span className="nav-link">Categories</span>
             <div className={`dropdown-content ${dropdownOpen ? "show" : ""}`}>
-              {categories.map((category, index) => (
-                <Link key={index} to={`/categories/${category.toLowerCase()}`} className="dropdown-item">
-                  {category}
-                </Link>
-              ))}
+              {categories.length > 0 ? (
+                categories.map((category, index) => (
+                  <Link key={index} to={`/categories/${category.toLowerCase()}`} className="dropdown-item">
+                    {category}
+                  </Link>
+                ))
+              ) : (
+                <p>No categories available</p>
+              )}
             </div>
           </div>
 
@@ -140,26 +152,26 @@ const Header = () => {
           <Link to="/more" className="nav-link">More</Link>
         </div>
 
-        {/* 🔹 Search Bar (Desktop - Unchanged) */}
+        {/* 🔹 Search Bar (Desktop Only) */}
         <div className="search-container">
-          <input 
-            type="text" 
-            placeholder="Search Products..." 
+          <input
+            type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={handleSearch}
+            placeholder="Search for company or product"
+            className="search-input"
           />
           
-          {/* 🔹 Search Results Dropdown (Desktop) */}
-          {searchResults.length > 0 && (
+          {searchQuery && searchResults.length > 0 && (
             <div className="search-results">
-              {searchResults.map((product) => (
-                <Link 
-                  key={product.id} 
-                  to={`/product/${product.id}`} 
+              {searchResults.slice(0, 10).map((product) => (
+                <Link
+                  key={product.id}
+                  to={`/product/${product.id}`}
                   className="search-item"
-                  onClick={() => setSearchQuery("")} // Clear search on click
+                  onClick={() => handleProductSelect(product.id)}  // Close results on select
                 >
-                  {product.name}
+                  <strong>{product.company}</strong> - {product.product}
                 </Link>
               ))}
             </div>
