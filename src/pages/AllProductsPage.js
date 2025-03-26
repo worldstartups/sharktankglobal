@@ -13,7 +13,8 @@ const AllProductsPage = () => {
   useEffect(() => {
     const fetchSeasonsData = async () => {
       try {
-        const response = await fetch('/data/seasons.json');
+        const response = await fetch(`${process.env.PUBLIC_URL}/data/seasons.json`);
+
         const data = await response.json();
         setSeasonsData(data.seasons);
       } catch (error) {
