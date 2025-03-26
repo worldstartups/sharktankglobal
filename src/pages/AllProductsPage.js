@@ -34,7 +34,6 @@ const AllProductsPage = () => {
         for (const season of seasonsData) {
           const seasonResponse = await fetch(`https://worldstartups.github.io/sharktankglobal/data/Season${season.season}.json`);
           
-          // Log the response text to check for issues
           const text = await seasonResponse.text();
           console.log("Season data response text:", text);  // Log raw response
 
@@ -76,10 +75,15 @@ const AllProductsPage = () => {
           allProducts.map((product) => (
             <Link to={`/product/${product.id}`} key={product.id} className="product-card-link">
               <div className="product-card">
-                <h2>{product.product}</h2>
-                <p><strong>Company:</strong> {product.company}</p>
-                <p><strong>Category:</strong> {product.category}</p>
-                <p><strong>Sub-Category:</strong> {product.subcategory}</p>
+                {/* Product Image */}
+                <img src={product.image} alt={product.product} className="product-image" />
+
+                <div className="product-details">
+                  <h2>{product.product}</h2>
+                  <p><strong>Company:</strong> {product.company}</p>
+                  <p><strong>Category:</strong> {product.category}</p>
+                  <p><strong>Sub-Category:</strong> {product.subcategory}</p>
+                </div>
 
                 {/* View Button */}
                 <div className="view-button">
