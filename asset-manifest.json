@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/sharktankglobal/static/css/main.e3cef30b.css",
-    "main.js": "/sharktankglobal/static/js/main.03a74d14.js",
+    "main.css": "/sharktankglobal/static/css/main.48790b47.css",
+    "main.js": "/sharktankglobal/static/js/main.9ffea9a3.js",
     "static/media/cosiq.jpg": "/sharktankglobal/static/media/cosiq.32273b49a5879bd8c7bf.jpg",
     "index.html": "/sharktankglobal/index.html",
-    "main.e3cef30b.css.map": "/sharktankglobal/static/css/main.e3cef30b.css.map",
-    "main.03a74d14.js.map": "/sharktankglobal/static/js/main.03a74d14.js.map"
+    "main.48790b47.css.map": "/sharktankglobal/static/css/main.48790b47.css.map",
+    "main.9ffea9a3.js.map": "/sharktankglobal/static/js/main.9ffea9a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3cef30b.css",
-    "static/js/main.03a74d14.js"
+    "static/css/main.48790b47.css",
+    "static/js/main.9ffea9a3.js"
   ]
 }
